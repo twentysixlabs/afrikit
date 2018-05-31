@@ -1,8 +1,8 @@
 // @flow
 
-import * as React from "react";
-import classNames from "classnames";
-import omit from "../../../helpers/omit";
+import * as React from 'react';
+import classNames from 'classnames';
+import omit from '../../../helpers/omit';
 
 export interface AntIconProps {
   type: string;
@@ -15,16 +15,16 @@ export interface AntIconProps {
 }
 
 const Icon = (props: AntIconProps) => {
-  const { type, className = "", spin } = props;
+  const { type, className = '', spin } = props;
   const classString = classNames(
     {
       anticon: true,
-      "anticon-spin": !!spin || type === "loading",
-      [`anticon-${type}`]: true
+      'anticon-spin': !!spin || type === 'loading',
+      [`anticon-${type}`]: true,
     },
-    className
+    className,
   );
-  return <i {...omit(props, ["type", "spin"])} className={classString} />;
+  return <i {...omit(props, ['type', 'spin'])} className={classString} />;
 };
 
 export default Icon;

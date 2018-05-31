@@ -1,8 +1,9 @@
 // @flow
 
 // Ant
-export { default as AntFontBase } from './src/ant-icons.style';
+export { default as AntFontIconBase } from './src/ant-icons.style';
 export { default as AntIcon, AntIconProps } from './src/ant-icons';
+export { default as AntIconNames } from './src/ant-icons.names';
 
 // Artsy
 export { default as ArtsyFontBase } from './src/artsy-icons.style';

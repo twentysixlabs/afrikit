@@ -1,12 +1,12 @@
 // @flow
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components';
 
 // $FlowIssue
 export const HelperClasses = () => injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto');
 
-  // Source: https://github.com/tachyons-css/tachyons/blob/master/src/_widths.css
 
+  // Source: https://github.com/tachyons-css/tachyons/blob/master/src/_widths.css
   .ttc { text-transform: capitalize; }
   .ttl { text-transform: lowercase; }
   .ttu { text-transform: uppercase; }
@@ -1518,4 +1518,115 @@ export const HelperClasses = () => injectGlobal`
   }
 }
 
+
+// Temp Globals. Dev Only. Remove before Prod
+
+* {
+  border: 0;
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+html {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f9fbfd;
+  color: #16171a;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "proxima-soft", -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+body {
+  display: flex;
+  box-sizing: border-box;
+  flex: auto;
+  align-self: stretch;
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  background: #A1D7FB;
+  color: #ffffff;
+}
+
+::selection {
+  background: #A1D7FB;
+  color: #ffffff;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #a3afbf;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #a3afbf;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #a3afbf;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #a3afbf;
+}
+
+#root {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
 `;
