@@ -1,5 +1,41 @@
 // @flow
-import { keyframes } from "styled-components";
+import { css, keyframes } from 'styled-components';
+import transitions from './transitions';
+
+export const motionCommon = (duration = transitions.duration) => css`
+  animation-duration: ${duration};
+  animation-fill-mode: both;
+`;
+
+export const motionCommonLeave = (duration = transitions.duration) => css`
+  animation-duration: ${duration};
+  animation-fill-mode: both;
+`;
+
+export const makeMotion = (
+  className,
+  keyFrameName,
+  duration = transitions.duration,
+) => css`
+  .${className}-enter, .${className}-appear {
+    ${motionCommon(duration)};
+    animation-play-state: paused;
+  }
+  .${className}-leave {
+    ${motionCommonLeave(duration)};
+    animation-play-state: paused;
+  }
+  .${className}-enter.${className}-enter-active,
+    .${className}-appear.${className}-appear-active {
+    animation-name: ${keyFrameName}In;
+    animation-play-state: running;
+  }
+  .${className}-leave.${className}-leave-active {
+    animation-name: ${keyFrameName}Out;
+    animation-play-state: running;
+    pointer-events: none;
+  }
+`;
 
 export const fadeIn = keyframes`
   from {

@@ -13,3 +13,6 @@ export { default as warning } from './warning';
 export {
   default as addEventListenerWrap,
 } from './add-event-listener/add-event-listener';
+export { default as omit } from './omit';
+export { default as shallowEqual } from './shallowequal';
+export { default as classNames } from './classnames';

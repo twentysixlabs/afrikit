@@ -1,6 +1,6 @@
 // @flow
-import { reduce } from "lodash";
-import warning from "./warning";
+import { reduce } from 'lodash.reduce';
+import warning from './warning';
 
 const MAX_ITERATIONS = 1000;
 
@@ -8,7 +8,7 @@ const fillwidthDimensions = (
   items: any,
   containerWidth: any,
   gutter: number = 10,
-  targetHeight: any
+  targetHeight: any,
 ) => {
   /**
    * Scales an image object proportionally based on a direction (either -1 or 1)
@@ -32,7 +32,7 @@ const fillwidthDimensions = (
       (sum, img) => {
         return sum + img.width;
       },
-      0
+      0,
     );
     return containerWidth - currentWidth - totalWhitespace();
   };
@@ -54,7 +54,7 @@ const fillwidthDimensions = (
     return {
       __id: id,
       width: targetHeight * aspectRatio,
-      height: targetHeight
+      height: targetHeight,
     };
   });
 
@@ -80,13 +80,13 @@ const fillwidthDimensions = (
         gutter,
         targetHeight,
         dir,
-        dimensions
+        dimensions,
       };
       warning(
         count === MAX_ITERATIONS,
         `Was unable to calculate a filling width for data: ${JSON.stringify(
-          data
-        )}`
+          data,
+        )}`,
       );
       break;
     }

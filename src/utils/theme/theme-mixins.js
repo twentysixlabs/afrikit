@@ -1,10 +1,41 @@
 // @flow
 import { css } from 'styled-components';
 
-export function rem($sizeValue: 12) {
-  const remSize = $sizeValue / 15;
+export const Shadow = {
+  low: '0 2px 8px',
+  mid: '0 4px 12px',
+  high: '0 8px 16px',
+};
+
+export const transition = {
+  hover: {
+    on: 'all 0.2s ease-in',
+    off: 'all 0.2s ease-out',
+  },
+  reaction: {
+    on: 'all 0.15s ease-in',
+    off: 'all 0.1s ease-out',
+  },
+  dropdown: {
+    off: 'all 0.35s ease-out',
+  },
+};
+
+export const rem = ($sizeValue = 12) => {
+  const remSize = $sizeValue / 14;
   return `${remSize}rem`;
-}
+};
+
+export const parseUnit = (str, theout) => {
+  let out = theout;
+  if (!out) out = [0, ''];
+
+  const str = String(str);
+  const num = parseFloat(str, 10);
+  out[0] = num;
+  out[1] = str.match(/[\d.\-\+]*\s*(.*)/)[1] || '';
+  return out;
+};
 
 export const radialGradient = (g1: string, g2: string) =>
   css`radial-gradient(ellipse farthest-corner at top left, ${g1} 0%, ${g2} 100%)`;
@@ -53,34 +84,6 @@ export const hexa = (hex: string, alpha: number) => {
   return `rgb(${r}, ${g}, ${b})`;
 };
 
-export const Shadow = {
-  low: '0 2px 8px',
-  mid: '0 4px 12px',
-  high: '0 8px 16px',
-};
-
-export const transition = {
-  hover: {
-    on: 'all 0.2s ease-in',
-    off: 'all 0.2s ease-out',
-  },
-  reaction: {
-    on: 'all 0.15s ease-in',
-    off: 'all 0.1s ease-out',
-  },
-  dropdown: {
-    off: 'all 0.35s ease-out',
-  },
-};
-
-// export const mediaBreakpoint = {
-//   handheld: (...args: any) => css`
-//     @media (max-width: 420px) {
-//       ${css(...args)};
-//     }
-//   `
-// };
-
 const breakpoints = {
   xs: 0, // em
   sm: 48, // em
@@ -114,3 +117,27 @@ export const mediaBreakpoint: any = Object.keys(breakpoints).reduce(
 //     font-size: 14px;
 //   ` }
 // `;
+
+export const clearfix = () => css`
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+`;
+
+export const placeholder = (color: string = 'something') => css`
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+`;

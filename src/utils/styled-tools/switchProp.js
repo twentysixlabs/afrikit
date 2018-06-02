@@ -1,7 +1,7 @@
 // @flow
-import get from "lodash/get";
+import get from 'lodash.get';
 
-import type { Needle } from ".";
+import type { Needle } from '.';
 
 /**
  * Switches on a given prop. Returns the value or function for a given prop value.
@@ -28,10 +28,10 @@ import type { Needle } from ".";
  * <Button size="large" theme={{ kind: "light" }} />
  */
 const switchProp = (needle: Needle, switches: Object): any => (
-  props: Object = {}
+  props: Object = {},
 ): any => {
   const value =
-    typeof needle === "function" ? needle(props) : get(props, needle);
+    typeof needle === 'function' ? needle(props) : get(props, needle);
   return get(switches, value);
 };
 

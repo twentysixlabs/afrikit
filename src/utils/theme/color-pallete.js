@@ -1,9 +1,9 @@
 // @flow
-import("bezier-easing");
+import('bezier-easing');
 
-const tinycolor = require("tinycolor2");
+const tinycolor = require('tinycolor2');
 
-export function colorPalette(color: any, index: number) {
+const colorPalette = (color: any, index: number) => {
   const hueStep = 2;
   const saturationStep = 16;
   const saturationStep2 = 5;
@@ -61,6 +61,8 @@ export function colorPalette(color: any, index: number) {
   return tinycolor({
     h: getHue(hsv, i, isLight),
     s: getSaturation(hsv, i, isLight),
-    v: getValue(hsv, i, isLight)
+    v: getValue(hsv, i, isLight),
   }).toHexString();
-}
+};
+
+export default colorPalette;
