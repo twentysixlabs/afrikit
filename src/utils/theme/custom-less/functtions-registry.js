@@ -29,7 +29,7 @@ function makeRegistry(base) {
     inherit() {
       return makeRegistry(this);
     },
-    create(base) {
+    create() {
       return makeRegistry(base);
     },
   };

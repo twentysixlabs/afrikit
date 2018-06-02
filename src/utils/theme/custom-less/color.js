@@ -5,8 +5,6 @@ const Quoted = require('../tree/quoted');
 const Anonymous = require('../tree/anonymous');
 const functionRegistry = require('./function-registry');
 
-let colorFunctions;
-
 function clamp(val) {
   return Math.min(1, Math.max(0, val));
 }
@@ -31,7 +29,8 @@ function scaled(n, size) {
   }
   return number(n);
 }
-colorFunctions = {
+
+const colorFunctions = {
   rgb(r, g, b) {
     return colorFunctions.rgba(r, g, b, 1.0);
   },
@@ -377,4 +376,7 @@ colorFunctions = {
     return colorFunctions.mix(colorFunctions.rgb(0, 0, 0), color, amount);
   },
 };
-functionRegistry.addMultiple(colorFunctions);
+
+// functionRegistry.addMultiple(colorFunctions);
+
+export default colorFunctions;

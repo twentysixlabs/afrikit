@@ -58,6 +58,7 @@ const colorPalette = (color: any, index: number) => {
   const isLight = index <= 6;
   const hsv = tinycolor(color).toHsv();
   const i = isLight ? lightColorCount + 1 - index : index - lightColorCount - 1;
+
   return tinycolor({
     h: getHue(hsv, i, isLight),
     s: getSaturation(hsv, i, isLight),
