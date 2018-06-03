@@ -1,5 +1,7 @@
 // @flow
 
+const Node = require('./node');
+
 const Keyword = function(value) {
   this.value = value;
 };

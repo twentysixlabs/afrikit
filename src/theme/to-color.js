@@ -3,7 +3,7 @@
 
 const tinycolor = require('tinycolor2');
 
-const colorPalette = (color: any, index: number) => {
+function toHexColor(color: any, index?: number = 5) {
   const hueStep = 2;
   const saturationStep = 16;
   const saturationStep2 = 5;
@@ -64,6 +64,6 @@ const colorPalette = (color: any, index: number) => {
     s: getSaturation(hsv, i, isLight),
     v: getValue(hsv, i, isLight),
   }).toHexString();
-};
+}
 
-export default colorPalette;
+export default toHexColor;

@@ -1,10 +1,10 @@
 // @flow
-export { default as colorPalette } from './color-palette';
 export {
+  default as colorFunctions,
   rgb,
   rgba,
   hsl,
-  hsla,
+  // hsla,
   hsv,
   hsva,
   hue,

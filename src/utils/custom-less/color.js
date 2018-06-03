@@ -353,8 +353,11 @@ const colorFunctions = {
   argb(color) {
     return new Anonymous(color.toARGB());
   },
-  color(c) {
-    if (c instanceof Quoted && /^#([a-f0-9]{6}|[a-f0-9]{3})$/i.test(c.value)) {
+  color(thec) {
+    let c = { value: thec };
+    // eslint-disable-next-line
+    console.log('this is the passed in color', c);
+    if (c instanceof Quoted || /^#([a-f0-9]{6}|[a-f0-9]{3})$/i.test(c.value)) {
       return new Color(c.value.slice(1));
     }
     // eslint-disable-next-line
@@ -383,7 +386,7 @@ export const {
   rgb,
   rgba,
   hsl,
-  hsla,
+  // hsla,
   hsv,
   hsva,
   hue,

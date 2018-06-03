@@ -16,10 +16,12 @@ import {
   shrinkAndFadeOut,
 } from './animations';
 
-import { color, fade, hsv, colorPalette, rgba, tint } from '../utils';
-import colors from './colors';
 import { rem } from './theme-mixins';
 import transitions from './transitions';
+import colors from './colors';
+
+const toHexColor = require('./to-color').default;
+const { color, fade, hsv, tint } = require('../utils/custom-less/color');
 
 export const theme = {
   bg: {
@@ -179,8 +181,8 @@ export const theme = {
   borders: {
     radiusBase: '4px',
     radiusSm: '2px',
-    colorBase: 'hsv(0, 0, 85%)', // base border outline a component
-    colorSplit: 'hsv(0, 0, 91%)', // split border inside a component
+    colorBase: hsv(0, 0, 0.85), // base border outline a component
+    colorSplit: hsv(0, 0, 0.91), // split border inside a component
     widthBase: '1px', // width of the border for a component
     styleBase: 'solid', // style of a components border
   },
@@ -198,16 +200,16 @@ export const theme = {
   // Color used by default to control hover and active backgrounds and for
   // alert info backgrounds.
 
-  primary1: color(colorPalette(colors.blue6, 1)), // replace tint(primaryColor, 90%)
-  primary2: color(colorPalette(colors.blue6, 2)), // replace tint(primaryColor, 80%)
-  primary3: color(colorPalette(colors.blue6, 3)), //
-  primary4: color(colorPalette(colors.blue6, 4)), //
-  primary5: color(colorPalette(colors.blue6, 5)), // color used to control the text color in many active and hover states, replace tint(primaryColor, 20%)
+  primary1: color(toHexColor(colors.blue6, 1)), // replace tint(primaryColor, 90%)
+  primary2: color(toHexColor(colors.blue6, 2)), // replace tint(primaryColor, 80%)
+  primary3: color(toHexColor(colors.blue6, 3)), //
+  primary4: color(toHexColor(colors.blue6, 4)), //
+  primary5: color(toHexColor(colors.blue6, 5)), // color used to control the text color in many active and hover states, replace tint(primaryColor, 20%)
   primary6: colors.blue6, // color used to control the text color of active buttons, don't use, use primaryColor
-  primary7: color(colorPalette(colors.blue6, 7)), // replace shade(primaryColor, 5%)
-  primary8: color(colorPalette(colors.blue6, 8)), //
-  primary9: color(colorPalette(colors.blue6, 9)), //
-  primary10: color(colorPalette(colors.blue6, 10)), //
+  primary7: color(toHexColor(colors.blue6, 7)), // replace shade(primaryColor, 5%)
+  primary8: color(toHexColor(colors.blue6, 8)), //
+  primary9: color(toHexColor(colors.blue6, 9)), //
+  primary10: color(toHexColor(colors.blue6, 10)), //
 
   // Background color for `<body>`
   bodyBackground: '#fff',
@@ -216,12 +218,12 @@ export const theme = {
   fontFamilyNoNumber: `${'-appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
   fontFamily: `${'"lato", -appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
   codeFamily: 'Consolas, Menlo, Courier, monospace',
-  headingColor: fade('#000', '85%'),
-  textColor: fade('#000', '65%'),
-  textColorSecondary: fade('#000', '45%'),
-  headingColorDark: fade('#fff', '100%'),
-  textColorDark: fade('#fff', '85%'),
-  textColorSecondaryDark: fade('#fff', '65%'),
+  headingColor: fade(color(toHexColor('#000')), 0.85),
+  textColor: fade(color(toHexColor('#000')), 0.65),
+  textColorSecondary: fade(color(toHexColor('#000')), 0.45),
+  headingColorDark: fade(color(toHexColor('#fff')), 1),
+  textColorDark: fade(color(toHexColor('#fff')), 0.85),
+  textColorSecondaryDark: fade(color(toHexColor('#fff')), 0.65),
   fontSizeBase: rem(14),
   fontSizeLg: rem(16),
   fontSizeSm: rem(12),
@@ -242,7 +244,7 @@ export const theme = {
   // The background colors for active and hover states for things like
   // list items or table cells.
   itemActiveBg: rem(12), //primary1,
-  itemHoverBg: color(colorPalette(colors.blue6, 1)), //primary1,
+  itemHoverBg: color(toHexColor(colors.blue6, 1)), //primary1,
 
   // ICONFONT
   iconfontCssPrefix: 'anticon',
@@ -250,8 +252,8 @@ export const theme = {
 
   // LINK
   linkColor: colors.blue6, //primaryColor,
-  linkHoverColor: color(colorPalette(colors.blue6, 5)),
-  linkActiveColor: color(colorPalette(colors.blue6, 7)),
+  linkHoverColor: color(toHexColor(colors.blue6, 5)),
+  linkActiveColor: color(toHexColor(colors.blue6, 7)),
   linkDecoration: 'none',
   linkHoverDecoration: 'none',
 
@@ -268,8 +270,8 @@ export const theme = {
   ...transitions,
 
   // Border color
-  borderColorBase: hsv(0, 0, '85%'), // base border outline a component
-  borderColorSplit: hsv(0, 0, '91%'), // split border inside a component
+  borderColorBase: hsv(0, 0, 0.85), // base border outline a component
+  borderColorSplit: hsv(0, 0, 0.91), // split border inside a component
   borderWidthBase: '1px', // width of the border for a component
   borderStyleBase: 'solid', // style of a components border
 
@@ -278,22 +280,22 @@ export const theme = {
   outlineWidth: '2px',
   outlineColor: colors.blue6,
 
-  backgroundColorLight: hsv(0, 0, '98%'), // background of header and selected item
-  backgroundColorBase: hsv(0, 0, '96%'), // Default grey background color
+  backgroundColorLight: hsv(0, 0, 0.98), // background of header and selected item
+  backgroundColorBase: hsv(0, 0, 0.96), // Default grey background color
 
   // Disabled states
-  disabledColor: fade('#000', '25%'),
-  disabledBg: hsv(0, 0, '98%'), //backgroundColorBase;
-  disabledColorDark: fade('#fff', '35%'),
+  disabledColor: fade(color(toHexColor('#000')), 0.25),
+  disabledBg: hsv(0, 0, 0.98), //backgroundColorBase;
+  disabledColorDark: fade(color(toHexColor('#fff')), 0.35),
 
   // Shadow
-  shadowColor: rgba(0, 0, 0, 0.15),
-  boxShadowBase: `0 2px 8px ${rgba(0, 0, 0, 0.15)}`,
-  shadow1Up: `0 2px 8px ${rgba(0, 0, 0, 0.15)}`,
-  shadow1Down: `0 2px 8px ${rgba(0, 0, 0, 0.15)}`,
-  shadow1Left: `-2px 0 8px ${rgba(0, 0, 0, 0.15)}`,
-  shadow1Right: `2px 0 8px ${rgba(0, 0, 0, 0.15)}`,
-  shadow2: `0 4px 12px ${rgba(0, 0, 0, 0.15)}`,
+  shadowColor: `rgba(0, 0, 0, 0.15)`,
+  boxShadowBase: `0 2px 8px rgba(0, 0, 0, 0.15)`,
+  shadow1Up: `0 2px 8px rgba(0, 0, 0, 0.15)`,
+  shadow1Down: `0 2px 8px rgba(0, 0, 0, 0.15)`,
+  shadow1Left: `-2px 0 8px rgba(0, 0, 0, 0.15)`,
+  shadow1Right: `2px 0 8px rgba(0, 0, 0, 0.15)`,
+  shadow2: `0 4px 12px rgba(0, 0, 0, 0.15)`,
 
   // Buttons
   btnFontWeight: 400,
@@ -303,17 +305,17 @@ export const theme = {
   btnprimaryColor: '#fff',
   btnprimaryBg: colors.blue6, //primaryColor,
 
-  btndefaultColor: fade('#000', '65%'), // textColor
+  btndefaultColor: fade(color(toHexColor('#000')), 0.65), // textColor
   btndefaultBg: '#fff',
-  btndefaultBorder: hsv(0, 0, '85%'), //borderColorBase;
+  btndefaultBorder: hsv(0, 0, 0.85), //borderColorBase;
 
   btndangerColor: colors.red6, // errorColor;
-  btndangerBg: hsv(0, 0, '96%'), //backgroundColorBase;
-  btndangerBorder: hsv(0, 0, '85%'), //borderColorBase;
+  btndangerBg: hsv(0, 0, 0.96), //backgroundColorBase;
+  btndangerBorder: hsv(0, 0, 0.85), //borderColorBase;
 
-  btndisableColor: fade('#000', '25%'), //disabledColor;
-  btndisableBg: hsv(0, 0, '98%'), // disabledBg;
-  btndisableBorder: hsv(0, 0, '85%'), //borderColorBase;
+  btndisableColor: fade(color(toHexColor('#000')), 0.25), //disabledColor;
+  btndisableBg: hsv(0, 0, 0.98), // disabledBg;
+  btndisableBorder: hsv(0, 0, 0.85), //borderColorBase;
 
   btnpaddingBase: `0 ${rem(15)}`, // 0 paddingMd - 1px;
   btnFontSizeLg: rem(16), //fontSizeLg;
@@ -329,7 +331,7 @@ export const theme = {
   btnCircleSizeLg: rem(40), // btnHeightLg;
   btnCircleSizeSm: rem(24), // btnHeightSm;
 
-  btnGroupBorder: color(colorPalette(colors.blue6, 5)), //primary-5;
+  btnGroupBorder: color(toHexColor(colors.blue6, 5)), //primary-5;
 
   // Checkbox
   checkBoxSize: rem(16),
@@ -341,9 +343,9 @@ export const theme = {
 
   // Radio buttons
   radioButtonBg: '#fff', // btnDefaultBg;
-  radioButtonColor: fade('#000', '65%'), // btnDefaultColor;
-  radioButtonHoverColor: color(colorPalette(colors.blue6, 5)), //primary-5;
-  radioButtonActiveColor: color(colorPalette(colors.blue6, 7)), //primary-7;
+  radioButtonColor: fade(color(toHexColor('#000')), 0.65), // btnDefaultColor;
+  radioButtonHoverColor: color(toHexColor(colors.blue6, 5)), //primary-5;
+  radioButtonActiveColor: color(toHexColor(colors.blue6, 7)), //primary-7;
 
   // Media queries breakpoints
   // Extra small screen / phone
@@ -397,7 +399,7 @@ export const theme = {
   // Layout light theme
   layoutSiderBackgroundLight: '#fff',
   layoutTriggerBackgroundLight: '#fff',
-  layoutTriggerColorLight: fade('#000', '65%'), // textColor
+  layoutTriggerColorLight: fade(color(toHexColor('#000')), 0.65), // textColor
 
   // zIndex list
   zindexAffix: 10,
@@ -419,7 +421,7 @@ export const theme = {
   // Form
   // ---
   labelRequiredColor: colors.red6, // highlightColor;
-  labelColor: fade('#000', '85%'), // headingColor;
+  labelColor: fade(color(toHexColor('#000')), 0.85), // headingColor;
   formItemMarginBottom: rem(24),
   formItemTrailingColon: true,
   formVerticalLabelPadding: `0 0 ${rem(8)}`,
@@ -437,13 +439,13 @@ export const theme = {
   inputPaddingVerticalBase: rem(4),
   inputPaddingVerticalSm: '1px',
   inputPaddingVerticalLg: rem(6),
-  inputPlaceholderColor: hsv(0, 0, '75%'),
-  inputColor: fade('#000', '65%'), // textColor
-  inputBorderColor: hsv(0, 0, '85%'), //borderColorBase;
+  inputPlaceholderColor: hsv(0, 0, 0.75),
+  inputColor: fade(color(toHexColor('#000')), 0.65), // textColor
+  inputBorderColor: hsv(0, 0, 0.85), //borderColorBase;
   inputBg: '#fff',
-  inputAddonBg: hsv(0, 0, '98%'), // backgroundColorLight;
+  inputAddonBg: hsv(0, 0, 0.98), // backgroundColorLight;
   inputHoverBorderColor: colors.blue6, // primaryColor;
-  inputDisabledBg: hsv(0, 0, '98%'), // disabledBg;
+  inputDisabledBg: hsv(0, 0, 0.98), // disabledBg;
 
   // Tooltip
   // ---
@@ -452,20 +454,20 @@ export const theme = {
   //** Tooltip text color
   tooltipColor: '#fff',
   //** Tooltip background color
-  tooltipBg: rgba(0, 0, 0, 0.75),
+  tooltipBg: `rgba(0, 0, 0, 0.75)`,
   //** Tooltip arrow width
   tooltipArrowWidth: rem(5),
   //** Tooltip distance with trigger
   tooltipDistance: rem(8), // tooltipArrowWidth - 1px + 4px;
   //** Tooltip arrow color
-  tooltipArrowColor: rgba(0, 0, 0, 0.75), // tooltipBg;
+  tooltipArrowColor: `rgba(0, 0, 0, 0.75)`, // tooltipBg;
 
   // Popover
   // ---
   //** Popover body background color
   popoverBg: '#fff',
   //** Popover text color
-  popoverColor: fade('#000', '65%'), // textColor
+  popoverColor: fade(color(toHexColor('#000')), 0.65), // textColor
   //** Popover maximum width
   popoverMinWidth: rem(177),
   //** Popover arrow width
@@ -480,12 +482,12 @@ export const theme = {
 
   // Modal
   // --
-  modalMaskBg: rgba(0, 0, 0, 0.65),
+  modalMaskBg: `rgba(0, 0, 0, 0.65)`,
 
   // Progress
   // --
   progressDefaultColor: colors.blue6, // processingColor;
-  progressRemainingColor: hsv(0, 0, '96%'), // backgroundColorBase;
+  progressRemainingColor: hsv(0, 0, 0.96), // backgroundColorBase;
 
   // Menu
   // ---
@@ -493,12 +495,12 @@ export const theme = {
   menuItemHeight: rem(40),
   menuCollapsedWidth: rem(80),
   menuBg: '#fff', // componentBackground;
-  menuItemColor: fade('#000', '65%'), // textColor
+  menuItemColor: fade(color(toHexColor('#000')), 0.65), // textColor
   menuHighlightColor: colors.blue6, // primaryColor;
   menuItemActiveBg: rem(12), //primary1, itemActiveBg;
-  menuItemGroupTitleColor: fade('#000', '45%'), //textColorSecondary;
+  menuItemGroupTitleColor: fade(color(toHexColor('#000')), 0.45), //textColorSecondary;
   // dark theme
-  menuDarkColor: fade('#fff', '65%'), // textColorSecondaryDark;
+  menuDarkColor: fade(color(toHexColor('#fff')), 0.65), // textColorSecondaryDark;
   menuDarkBg: '#001529', // layoutHeaderBackground;
   menuDarkArrowColor: '#fff',
   menuDarkSubmenuBg: '#000c17',
@@ -513,9 +515,9 @@ export const theme = {
 
   // Table
   // --
-  tableHeaderBg: hsv(0, 0, '98%'), // backgroundColorLight;
-  tableHeaderSortBg: hsv(0, 0, '96%'), // backgroundColorBase;
-  tableRowHoverBg: color(colorPalette(colors.blue6, 1)), // primary1;
+  tableHeaderBg: hsv(0, 0, 0.98), // backgroundColorLight;
+  tableHeaderSortBg: hsv(0, 0, 0.96), // backgroundColorBase;
+  tableRowHoverBg: color(toHexColor(colors.blue6, 1)), // primary1;
   tableSelectedRowBg: '#fafafa',
   tableExpandedRowBg: '#fbfbfb',
   tablePaddingVertical: rem(16),
@@ -523,15 +525,15 @@ export const theme = {
 
   // Tag
   // --
-  tagDefaultBg: hsv(0, 0, '98%'), // backgroundColorLight;
-  tagDefaultColor: fade('#000', '65%'), // textColor
+  tagDefaultBg: hsv(0, 0, 0.98), // backgroundColorLight;
+  tagDefaultColor: fade(color(toHexColor('#000')), 0.65), // textColor
   tagFontSize: rem(12), // fontSizeSm;
 
   // TimePicker
   // ---
   timePickerPanelColumnWidth: rem(56),
   timePickerPanelWidth: rem(56 * 3), // timePickerPanelColumnWidth * 3;
-  timePickerSelectedBg: hsv(0, 0, '96%'), // backgroundColorBase;
+  timePickerSelectedBg: hsv(0, 0, 0.96), // backgroundColorBase;
 
   // Carousel
   // ---
@@ -549,22 +551,22 @@ export const theme = {
   // Rate
   // ---
   rateStarColor: colors.yellow6, // yellow6;
-  rateStarBg: hsv(0, 0, '91%'), // borderColorSplit;
+  rateStarBg: hsv(0, 0, 0.91), // borderColorSplit;
 
   // Card
   // ---
-  cardHeadColor: fade('#000', '85%'), // headingColor;
+  cardHeadColor: fade(color(toHexColor('#000')), 0.85), // headingColor;
   cardHeadBackground: '#fff', // componentBackground;
   cardHeadPadding: rem(16),
   cardInnerHeadPadding: rem(12),
   cardPaddingBase: rem(24),
   cardPaddingWider: rem(32),
-  cardActionsBackground: hsv(0, 0, '98%'), // backgroundColorLight;
-  cardShadow: `0 2px 8px ${rgba(0, 0, 0, 0.09)}`,
+  cardActionsBackground: hsv(0, 0, 0.98), // backgroundColorLight;
+  cardShadow: `0 2px 8px rgba(0, 0, 0, 0.09)`,
 
   // Tabs
   // ---
-  tabsCardHeadBackground: hsv(0, 0, '98%'), // backgroundColorLight;
+  tabsCardHeadBackground: hsv(0, 0, 0.98), // backgroundColorLight;
   tabsCardHeight: rem(40),
   tabsCardActiveColor: colors.blue6, // primaryColor;
   tabsTitleFontSize: rem(14), // fontSizeBase;
@@ -578,14 +580,14 @@ export const theme = {
   tabsVerticalMargin: `0 0 ${rem(16)} 0`,
   tabsScrollingSize: rem(32),
   tabsHighlightColor: colors.blue6, // primaryColor;
-  tabsHoverColor: color(colorPalette(colors.blue6, 5)), // primary5;
-  tabsActiveColor: color(colorPalette(colors.blue6, 7)), // primary7;
+  tabsHoverColor: color(toHexColor(colors.blue6, 5)), // primary5;
+  tabsActiveColor: color(toHexColor(colors.blue6, 7)), // primary7;
 
   // BackTop
   // ---
   backTopColor: '#fff',
-  backTopBg: fade('#000', '45%'), // textColorSecondary;
-  backTopHoverBg: fade('#000', '65%'), // textColor
+  backTopBg: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  backTopHoverBg: fade(color(toHexColor('#000')), 0.65), // textColor
 
   // Avatar
   // ---
@@ -616,36 +618,36 @@ export const theme = {
 
   // Breadcrumb
   // ---
-  breadcrumbBaseColor: fade('#000', '45%'), // textColorSecondary;
-  breadcrumbLastItemColor: fade('#000', '65%'), //textColor;
+  breadcrumbBaseColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  breadcrumbLastItemColor: fade(color(toHexColor('#000')), 0.65), //textColor;
   breadcrumbFontSize: rem(14), // fontSizeBase;
   breadcrumbIconFontSize: rem(12), // fontSizeSm;
-  breadcrumbLinkColor: fade('#000', '45%'), // textColorSecondary;
-  breadcrumbLinkColorHover: color(colorPalette(colors.blue6, 5)), // primary5;
-  breadcrumbSeparatorColor: fade('#000', '45%'), // textColorSecondary;
+  breadcrumbLinkColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  breadcrumbLinkColorHover: color(toHexColor(colors.blue6, 5)), // primary5;
+  breadcrumbSeparatorColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
   breadcrumbSeparatorMargin: `0 ${rem(8)}`, // 0 paddingXs;
 
   // Slider
   // ---
   sliderMargin: `${rem(14)} ${rem(6)} ${rem(10)}`, // 14px 6px 10px;
-  sliderRailBackgroundColor: hsv(0, 0, '96%'), // backgroundColorBase;
+  sliderRailBackgroundColor: hsv(0, 0, 0.96), // backgroundColorBase;
   sliderRailBackgroundColorHover: '#e1e1e1',
-  sliderTrackBackgroundColor: color(colorPalette(colors.blue6, 3)), //  primary3;
-  sliderTrackBackgroundColorHover: color(colorPalette(colors.blue6, 4)), // primary4;
-  sliderHandleColor: color(colorPalette(colors.blue6, 3)), // primary3;
-  sliderHandleColorHover: color(colorPalette(colors.blue6, 4)), // primary4;
-  sliderHandleColorFocus: tint(colors.blue6, '20%'),
-  sliderHandleColorFocusShadow: tint(colors.blue6, '50%'),
+  sliderTrackBackgroundColor: color(toHexColor(colors.blue6, 3)), //  primary3;
+  sliderTrackBackgroundColorHover: color(toHexColor(colors.blue6, 4)), // primary4;
+  sliderHandleColor: color(toHexColor(colors.blue6, 3)), // primary3;
+  sliderHandleColorHover: color(toHexColor(colors.blue6, 4)), // primary4;
+  sliderHandleColorFocus: tint(colors.blue6, 0.2),
+  sliderHandleColorFocusShadow: tint(colors.blue6, 0.5),
   sliderHandleColorTooltipOpen: colors.blue6, // primaryColor;
-  sliderDotBorderColor: hsv(0, 0, '91%'), // borderColorSplit;
-  sliderDotBorderColorActive: tint(colors.blue6, '50%'),
-  sliderDisabledColor: fade('#000', '25%'), // disabledColor;
+  sliderDotBorderColor: hsv(0, 0, 0.91), // borderColorSplit;
+  sliderDotBorderColorActive: tint(colors.blue6, 0.5),
+  sliderDisabledColor: fade(color(toHexColor('#000')), 0.25), // disabledColor;
   sliderDisabledBackgroundColor: '#fff', // componentBackground;
 
   // Collapse
   // ---
   collapseHeaderPadding: `${rem(12)} 0 ${rem(12)} ${rem(40)}`, // 12px 0 12px 40px;
-  collapseHeaderBg: hsv(0, 0, '98%'), // backgroundColorLight;
+  collapseHeaderBg: hsv(0, 0, 0.98), // backgroundColorLight;
   collapseContentPadding: rem(16), // paddingMd;
   collapseContentBg: '#fff', //componentBackground
 };
