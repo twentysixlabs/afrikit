@@ -1,5 +1,5 @@
 // @flow
-import('bezier-easing');
+// import('bezier-easing');
 
 const tinycolor = require('tinycolor2');
 

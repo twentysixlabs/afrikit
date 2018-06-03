@@ -3,7 +3,7 @@ const Dimension = require('../tree/dimension');
 const Color = require('../tree/color');
 const Quoted = require('../tree/quoted');
 const Anonymous = require('../tree/anonymous');
-const functionRegistry = require('./function-registry');
+// const functionRegistry = require('./function-registry');
 
 function clamp(val) {
   return Math.min(1, Math.max(0, val));
@@ -378,5 +378,41 @@ const colorFunctions = {
 };
 
 // functionRegistry.addMultiple(colorFunctions);
+
+export const {
+  rgb,
+  rgba,
+  hsl,
+  hsla,
+  hsv,
+  hsva,
+  hue,
+  saturation,
+  lightness,
+  hsvhue,
+  hsvsaturation,
+  hsvvalue,
+  red,
+  green,
+  blue,
+  alpha,
+  luma,
+  luminance,
+  saturate,
+  desaturate,
+  lighten,
+  darken,
+  fadein,
+  fadeout,
+  fade,
+  spin,
+  mix,
+  greyscale,
+  contrast,
+  argb,
+  color,
+  tint,
+  shade,
+} = colorFunctions;
 
 export default colorFunctions;

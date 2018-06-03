@@ -1,9 +1,8 @@
 // @flow
 
-const colorFunctions = require('./custom-less/color');
-const colorPalette = require('./color-pallete');
-
-const { color } = colorFunctions;
+import { color, colorPalette } from '../utils';
+// const colorFunctions = require('./custom-less/color');
+// const { color } = colorFunctions;
 
 const colors = {
   blue1: color(colorPalette('#1890ff', 1)),

@@ -1,3 +1,3 @@
 // @flow
 export * from './styled-tools';
-export * from './theme';
+export * from './custom-less';
