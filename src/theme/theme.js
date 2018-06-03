@@ -18,7 +18,7 @@ import {
 
 import { color, fade, hsv, colorPalette, rgba, tint } from '../utils';
 import colors from './colors';
-import { rem } from './themeMixins';
+import { rem } from './theme-mixins';
 import transitions from './transitions';
 
 export const theme = {

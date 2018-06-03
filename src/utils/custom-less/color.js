@@ -1,8 +1,8 @@
 // @flow
-const Dimension = require('../tree/dimension');
-const Color = require('../tree/color');
-const Quoted = require('../tree/quoted');
-const Anonymous = require('../tree/anonymous');
+const Dimension = require('./tree/dimensions');
+const Color = require('./tree/color');
+const Quoted = require('./tree/quoted');
+const Anonymous = require('./tree/anonymous');
 // const functionRegistry = require('./function-registry');
 
 function clamp(val) {

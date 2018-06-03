@@ -8,7 +8,7 @@ import {
   Row as FlexRow,
 } from 'react-styled-flexboxgrid';
 
-import { mediaBreakpoint } from '../../../utils/theme/theme-mixins';
+import { mediaBreakpoint } from '../../../theme/theme-mixins';
 
 export const Scrollable = styled.div`
   height: 100%;

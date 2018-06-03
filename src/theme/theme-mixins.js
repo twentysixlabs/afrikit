@@ -26,11 +26,11 @@ export const rem = ($sizeValue = 12) => {
   return `${remSize}rem`;
 };
 
-export const parseUnit = (str, theout) => {
+export const parseUnit = (strInput, theout) => {
   let out = theout;
   if (!out) out = [0, ''];
 
-  const str = String(str);
+  const str = String(strInput);
   const num = parseFloat(str, 10);
   out[0] = num;
   out[1] = str.match(/[\d.\-\+]*\s*(.*)/)[1] || '';

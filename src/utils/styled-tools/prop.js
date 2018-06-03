@@ -1,6 +1,6 @@
 // @flow
 import get from 'lodash.get';
-import { theme } from '../theme';
+import { theme } from '../../theme';
 import { is } from './util-helpers';
 
 /**
