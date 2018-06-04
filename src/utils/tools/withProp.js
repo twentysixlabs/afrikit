@@ -1,7 +1,7 @@
 // @flow
 import get from 'lodash.get';
 
-import type { Needle } from '.';
+import type { Needle } from './needle';
 
 /**
  * Calls a function passing properties values as arguments.

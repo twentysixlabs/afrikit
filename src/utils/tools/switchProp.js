@@ -1,7 +1,7 @@
 // @flow
 import get from 'lodash.get';
 
-import type { Needle } from '.';
+import type { Needle } from './needle';
 
 /**
  * Switches on a given prop. Returns the value or function for a given prop value.

@@ -1,5 +1,5 @@
 {
   "presets": [
-    "./scripts/babel/afrikitBabelPreset"
+    "./scripts/babel/preset"
   ]
 }

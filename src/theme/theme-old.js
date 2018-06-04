@@ -1,5 +1,4 @@
 // @flow
-
 // Export theme to theme provider
 // Every property here is globally available in styledComponents when interpolating a function like so:
 // ${(props) => props.theme}
@@ -21,13 +20,8 @@ import { rem } from './theme-mixins';
 import transitions from './transitions';
 import colors from './colors';
 
-import tint from '../utils/color/tint';
-import rgba from '../utils/color/rgba';
-import hsv from '../utils/color/hsv';
-
-// import { tint, rgba, hsv } from '../utils';
-
-// const { tint, rgba, hsv } = require('../utils');
+const toHexColor = require('./to-color').default;
+const { color, fade, hsv, tint } = require('../utils/custom-less/color');
 
 export const theme = {
   // -------- Colors -----------
@@ -54,16 +48,16 @@ export const theme = {
   },
 
   // Color used by default to control hover and active backgrounds and for alert info backgrounds.
-  primary1: colors.blue1, // replace tint(primaryColor, 90%)
-  primary2: colors.blue2, // replace tint(primaryColor, 80%)
-  primary3: colors.blue3, //
-  primary4: colors.blue4, //
-  primary5: colors.blue5, // color used to control the text color in many active and hover states, replace tint(primaryColor, 20%)
+  primary1: color(toHexColor(colors.blue6, 1)), // replace tint(primaryColor, 90%)
+  primary2: color(toHexColor(colors.blue6, 2)), // replace tint(primaryColor, 80%)
+  primary3: color(toHexColor(colors.blue6, 3)), //
+  primary4: color(toHexColor(colors.blue6, 4)), //
+  primary5: color(toHexColor(colors.blue6, 5)), // color used to control the text color in many active and hover states, replace tint(primaryColor, 20%)
   primary6: colors.blue6, // color used to control the text color of active buttons, don't use, use primaryColor
-  primary7: colors.blue7, // replace shade(primaryColor, 5%)
-  primary8: colors.blue8, //
-  primary9: colors.blue9, //
-  primary10: colors.blue10, //
+  primary7: color(toHexColor(colors.blue6, 7)), // replace shade(primaryColor, 5%)
+  primary8: color(toHexColor(colors.blue6, 8)), //
+  primary9: color(toHexColor(colors.blue6, 9)), //
+  primary10: color(toHexColor(colors.blue6, 10)), //
 
   // Background color for `<body>`
   bodyBackground: '#fff',
@@ -72,12 +66,12 @@ export const theme = {
   fontFamilyNoNumber: `${'-appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
   fontFamily: `${'"lato", -appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
   codeFamily: 'Consolas, Menlo, Courier, monospace',
-  headingColor: rgba('#000', 0.85),
-  textColor: rgba('#000', 0.65),
-  textColorSecondary: rgba('#000', 0.45),
-  headingColorDark: rgba('#fff', 1),
-  textColorDark: rgba('#fff', 0.85),
-  textColorSecondaryDark: rgba('#fff', 0.65),
+  headingColor: fade(color(toHexColor('#000')), 0.85),
+  textColor: fade(color(toHexColor('#000')), 0.65),
+  textColorSecondary: fade(color(toHexColor('#000')), 0.45),
+  headingColorDark: fade(color(toHexColor('#fff')), 1),
+  textColorDark: fade(color(toHexColor('#fff')), 0.85),
+  textColorSecondaryDark: fade(color(toHexColor('#fff')), 0.65),
   fontSizeBase: rem(14),
   fontSizeLg: rem(16),
   fontSizeSm: rem(12),
@@ -96,7 +90,7 @@ export const theme = {
   // The background colors for active and hover states for things like
   // list items or table cells.
   itemActiveBg: rem(12), //primary1,
-  itemHoverBg: colors.blue1, //primary1,
+  itemHoverBg: color(toHexColor(colors.blue6, 1)), //primary1,
 
   // ICONFONT
   iconfontCssPrefix: 'anticon',
@@ -104,8 +98,8 @@ export const theme = {
 
   // LINK
   linkColor: colors.blue6, //primaryColor,
-  linkHoverColor: colors.blue5,
-  linkActiveColor: colors.blue7,
+  linkHoverColor: color(toHexColor(colors.blue6, 5)),
+  linkActiveColor: color(toHexColor(colors.blue6, 7)),
   linkDecoration: 'none',
   linkHoverDecoration: 'none',
 
@@ -138,9 +132,9 @@ export const theme = {
   backgroundColorBase: hsv(0, 0, 0.96), // Default grey background color
 
   // Disabled states
-  disabledColor: rgba('#000', 0.25),
+  disabledColor: fade(color(toHexColor('#000')), 0.25),
   disabledBg: hsv(0, 0, 0.98), //backgroundColorBase;
-  disabledColorDark: rgba('#fff', 0.35),
+  disabledColorDark: fade(color(toHexColor('#fff')), 0.35),
 
   // Shadow
   shadowColor: `rgba(0, 0, 0, 0.15)`,
@@ -159,7 +153,7 @@ export const theme = {
   btnprimaryColor: '#fff',
   btnprimaryBg: colors.blue6, //primaryColor,
 
-  btndefaultColor: rgba('#000', 0.65), // textColor
+  btndefaultColor: fade(color(toHexColor('#000')), 0.65), // textColor
   btndefaultBg: '#fff',
   btndefaultBorder: hsv(0, 0, 0.85), //borderColorBase;
 
@@ -167,7 +161,7 @@ export const theme = {
   btndangerBg: hsv(0, 0, 0.96), //backgroundColorBase;
   btndangerBorder: hsv(0, 0, 0.85), //borderColorBase;
 
-  btndisableColor: rgba('#000', 0.25), //disabledColor;
+  btndisableColor: fade(color(toHexColor('#000')), 0.25), //disabledColor;
   btndisableBg: hsv(0, 0, 0.98), // disabledBg;
   btndisableBorder: hsv(0, 0, 0.85), //borderColorBase;
 
@@ -185,7 +179,7 @@ export const theme = {
   btnCircleSizeLg: rem(40), // btnHeightLg;
   btnCircleSizeSm: rem(24), // btnHeightSm;
 
-  btnGroupBorder: colors.blue5, //primary5;
+  btnGroupBorder: color(toHexColor(colors.blue6, 5)), //primary-5;
 
   // Checkbox
   checkBoxSize: rem(16),
@@ -197,9 +191,9 @@ export const theme = {
 
   // Radio buttons
   radioButtonBg: '#fff', // btnDefaultBg;
-  radioButtonColor: rgba('#000', 0.65), // btnDefaultColor;
-  radioButtonHoverColor: colors.blue5, //primary-5;
-  radioButtonActiveColor: colors.blue7, //primary-7;
+  radioButtonColor: fade(color(toHexColor('#000')), 0.65), // btnDefaultColor;
+  radioButtonHoverColor: color(toHexColor(colors.blue6, 5)), //primary-5;
+  radioButtonActiveColor: color(toHexColor(colors.blue6, 7)), //primary-7;
 
   // Media queries breakpoints
 
@@ -272,7 +266,7 @@ export const theme = {
   // Layout light theme
   layoutSiderBackgroundLight: '#fff',
   layoutTriggerBackgroundLight: '#fff',
-  layoutTriggerColorLight: rgba('#000', 0.65), // textColor
+  layoutTriggerColorLight: fade(color(toHexColor('#000')), 0.65), // textColor
 
   // zIndex list
   zindexAffix: 10,
@@ -294,7 +288,7 @@ export const theme = {
   // Form
   // ---
   labelRequiredColor: colors.red6, // highlightColor;
-  labelColor: rgba('#000', 0.85), // headingColor;
+  labelColor: fade(color(toHexColor('#000')), 0.85), // headingColor;
   formItemMarginBottom: rem(24),
   formItemTrailingColon: true,
   formVerticalLabelPadding: `0 0 ${rem(8)}`,
@@ -313,7 +307,7 @@ export const theme = {
   inputPaddingVerticalSm: '1px',
   inputPaddingVerticalLg: rem(6),
   inputPlaceholderColor: hsv(0, 0, 0.75),
-  inputColor: rgba('#000', 0.65), // textColor
+  inputColor: fade(color(toHexColor('#000')), 0.65), // textColor
   inputBorderColor: hsv(0, 0, 0.85), //borderColorBase;
   inputBg: '#fff',
   inputAddonBg: hsv(0, 0, 0.98), // backgroundColorLight;
@@ -340,7 +334,7 @@ export const theme = {
   //** Popover body background color
   popoverBg: '#fff',
   //** Popover text color
-  popoverColor: rgba('#000', 0.65), // textColor
+  popoverColor: fade(color(toHexColor('#000')), 0.65), // textColor
   //** Popover maximum width
   popoverMinWidth: rem(177),
   //** Popover arrow width
@@ -368,12 +362,12 @@ export const theme = {
   menuItemHeight: rem(40),
   menuCollapsedWidth: rem(80),
   menuBg: '#fff', // componentBackground;
-  menuItemColor: rgba('#000', 0.65), // textColor
+  menuItemColor: fade(color(toHexColor('#000')), 0.65), // textColor
   menuHighlightColor: colors.blue6, // primaryColor;
   menuItemActiveBg: rem(12), //primary1, itemActiveBg;
-  menuItemGroupTitleColor: rgba('#000', 0.45), //textColorSecondary;
+  menuItemGroupTitleColor: fade(color(toHexColor('#000')), 0.45), //textColorSecondary;
   // dark theme
-  menuDarkColor: rgba('#fff', 0.65), // textColorSecondaryDark;
+  menuDarkColor: fade(color(toHexColor('#fff')), 0.65), // textColorSecondaryDark;
   menuDarkBg: '#001529', // layoutHeaderBackground;
   menuDarkArrowColor: '#fff',
   menuDarkSubmenuBg: '#000c17',
@@ -390,7 +384,7 @@ export const theme = {
   // --
   tableHeaderBg: hsv(0, 0, 0.98), // backgroundColorLight;
   tableHeaderSortBg: hsv(0, 0, 0.96), // backgroundColorBase;
-  tableRowHoverBg: colors.blue1, // primary1;
+  tableRowHoverBg: color(toHexColor(colors.blue6, 1)), // primary1;
   tableSelectedRowBg: '#fafafa',
   tableExpandedRowBg: '#fbfbfb',
   tablePaddingVertical: rem(16),
@@ -399,7 +393,7 @@ export const theme = {
   // Tag
   // --
   tagDefaultBg: hsv(0, 0, 0.98), // backgroundColorLight;
-  tagDefaultColor: rgba('#000', 0.65), // textColor
+  tagDefaultColor: fade(color(toHexColor('#000')), 0.65), // textColor
   tagFontSize: rem(12), // fontSizeSm;
 
   // TimePicker
@@ -428,7 +422,7 @@ export const theme = {
 
   // Card
   // ---
-  cardHeadColor: rgba('#000', 0.85), // headingColor;
+  cardHeadColor: fade(color(toHexColor('#000')), 0.85), // headingColor;
   cardHeadBackground: '#fff', // componentBackground;
   cardHeadPadding: rem(16),
   cardInnerHeadPadding: rem(12),
@@ -453,14 +447,14 @@ export const theme = {
   tabsVerticalMargin: `0 0 ${rem(16)} 0`,
   tabsScrollingSize: rem(32),
   tabsHighlightColor: colors.blue6, // primaryColor;
-  tabsHoverColor: colors.blue5, // primary5;
-  tabsActiveColor: colors.blue7, // primary7;
+  tabsHoverColor: color(toHexColor(colors.blue6, 5)), // primary5;
+  tabsActiveColor: color(toHexColor(colors.blue6, 7)), // primary7;
 
   // BackTop
   // ---
   backTopColor: '#fff',
-  backTopBg: rgba('#000', 0.45), // textColorSecondary;
-  backTopHoverBg: rgba('#000', 0.65), // textColor
+  backTopBg: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  backTopHoverBg: fade(color(toHexColor('#000')), 0.65), // textColor
 
   // Avatar
   // ---
@@ -491,13 +485,13 @@ export const theme = {
 
   // Breadcrumb
   // ---
-  breadcrumbBaseColor: rgba('#000', 0.45), // textColorSecondary;
-  breadcrumbLastItemColor: rgba('#000', 0.65), //textColor;
+  breadcrumbBaseColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  breadcrumbLastItemColor: fade(color(toHexColor('#000')), 0.65), //textColor;
   breadcrumbFontSize: rem(14), // fontSizeBase;
   breadcrumbIconFontSize: rem(12), // fontSizeSm;
-  breadcrumbLinkColor: rgba('#000', 0.45), // textColorSecondary;
-  breadcrumbLinkColorHover: colors.blue5, // primary5;
-  breadcrumbSeparatorColor: rgba('#000', 0.45), // textColorSecondary;
+  breadcrumbLinkColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
+  breadcrumbLinkColorHover: color(toHexColor(colors.blue6, 5)), // primary5;
+  breadcrumbSeparatorColor: fade(color(toHexColor('#000')), 0.45), // textColorSecondary;
   breadcrumbSeparatorMargin: `0 ${rem(8)}`, // 0 paddingXs;
 
   // Slider
@@ -505,16 +499,16 @@ export const theme = {
   sliderMargin: `${rem(14)} ${rem(6)} ${rem(10)}`, // 14px 6px 10px;
   sliderRailBackgroundColor: hsv(0, 0, 0.96), // backgroundColorBase;
   sliderRailBackgroundColorHover: '#e1e1e1',
-  sliderTrackBackgroundColor: colors.blue3, //  primary3;
-  sliderTrackBackgroundColorHover: colors.blue4, // primary4;
-  sliderHandleColor: colors.blue3, // primary3;
-  sliderHandleColorHover: colors.blue4, // primary4;
-  sliderHandleColorFocus: tint(0.2, colors.blue6),
-  sliderHandleColorFocusShadow: tint(0.5, colors.blue6),
+  sliderTrackBackgroundColor: color(toHexColor(colors.blue6, 3)), //  primary3;
+  sliderTrackBackgroundColorHover: color(toHexColor(colors.blue6, 4)), // primary4;
+  sliderHandleColor: color(toHexColor(colors.blue6, 3)), // primary3;
+  sliderHandleColorHover: color(toHexColor(colors.blue6, 4)), // primary4;
+  sliderHandleColorFocus: tint(colors.blue6, 0.2),
+  sliderHandleColorFocusShadow: tint(colors.blue6, 0.5),
   sliderHandleColorTooltipOpen: colors.blue6, // primaryColor;
   sliderDotBorderColor: hsv(0, 0, 0.91), // borderColorSplit;
-  sliderDotBorderColorActive: tint(0.5, colors.blue6),
-  sliderDisabledColor: rgba('#000', 0.25), // disabledColor;
+  sliderDotBorderColorActive: tint(colors.blue6, 0.5),
+  sliderDisabledColor: fade(color(toHexColor('#000')), 0.25), // disabledColor;
   sliderDisabledBackgroundColor: '#fff', // componentBackground;
 
   // Collapse
