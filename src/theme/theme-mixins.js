@@ -21,11 +21,6 @@ export const transition = {
   },
 };
 
-export const rem = ($sizeValue = 12) => {
-  const remSize = $sizeValue / 14;
-  return `${remSize}rem`;
-};
-
 export const parseUnit = (strInput, theout) => {
   let out = theout;
   if (!out) out = [0, ''];

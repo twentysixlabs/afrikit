@@ -1,6 +1,11 @@
 // @flow
-export { HelperClasses } from './helper-classes';
-export { theme } from './theme';
-export { mediaBreakpoint, rem, truncate, parseUnit } from './theme-mixins';
-export { ThemeReset } from './theme-reset';
-export { default as colors } from './colors';
+import ThemeReset from './theme-reset';
+import ThemeHelperClasses from './theme-helper-classes';
+import themeColors from './theme-colors';
+import themeTransitions from './theme-transitions';
+
+import theme from './theme';
+
+export { mediaBreakpoint, truncate, parseUnit } from './theme-mixins';
+
+export { ThemeReset, ThemeHelperClasses, themeColors, themeTransitions, theme };

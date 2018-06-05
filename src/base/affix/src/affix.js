@@ -8,7 +8,7 @@ import {
   shallowEqual,
   getScroll,
   throttleByAnimationFrameDecorator,
-} from '../../../helpers';
+} from '../../../utils';
 
 function getTargetRect(target: HTMLElement | Window | null): ClientRect {
   return target !== window

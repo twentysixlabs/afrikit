@@ -1,8 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import classNames from 'classnames';
-import omit from '../../../helpers/omit';
+import { classNames, omit } from '../../../utils';
 
 export interface AntIconProps {
   type: string;
@@ -24,6 +23,10 @@ const Icon = (props: AntIconProps) => {
     },
     className,
   );
+
+  // eslint-disable-next-line
+  // console.log('This is the class string', classString);
+
   return <i {...omit(props, ['type', 'spin'])} className={classString} />;
 };
 

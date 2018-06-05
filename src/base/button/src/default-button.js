@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { findDOMNode } from 'react-dom';
-import { classNames, omit } from '../../../helpers';
+import { classNames, omit } from '../../../utils';
 import { AntIcon as Icon } from '../../icon';
 import Group from './button-group';
 

@@ -15,12 +15,12 @@ import {
   pulsate,
   growAndFadeIn,
   shrinkAndFadeOut,
-} from './animations';
+} from './theme-animations';
 
-import { rem } from './theme-mixins';
-import transitions from './transitions';
-import colors from './colors';
+import transitions from './theme-transitions';
+import colors from './theme-colors';
 
+import rem from '../utils/helpers/rem';
 import tint from '../utils/color/tint';
 import rgba from '../utils/color/rgba';
 import hsv from '../utils/color/hsv';
@@ -29,7 +29,7 @@ import hsv from '../utils/color/hsv';
 
 // const { tint, rgba, hsv } = require('../utils');
 
-export const theme = {
+const theme = {
   // -------- Colors -----------
   primaryColor: colors.blue6,
   infoColor: colors.blue6,
@@ -524,3 +524,5 @@ export const theme = {
   collapseContentPadding: rem(16), // paddingMd;
   collapseContentBg: '#fff', //componentBackground
 };
+
+export default theme;

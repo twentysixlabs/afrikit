@@ -1,8 +1,8 @@
 // @flow
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components';
 
 // $FlowIssue
-export const ThemeReset = () => injectGlobal`
+const ThemeReset = () => injectGlobal`
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -347,3 +347,5 @@ template {
 }
 
 `;
+
+export default ThemeReset;

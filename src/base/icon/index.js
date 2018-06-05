@@ -1,21 +1,37 @@
 // @flow
 
 // Ant
-export { default as AntFontIconBase } from './src/ant-icons.style';
-export { default as AntIcon, AntIconProps } from './src/ant-icons';
-export { default as AntIconNames } from './src/ant-icons.names';
+import AntFontIconBase from './src/ant-icons.style';
+import AntIcon, { AntIconProps } from './src/ant-icons';
+import AntIconNames from './src/ant-icons.names';
 
 // Artsy
-export { default as ArtsyFontBase } from './src/artsy-icons.style';
-export { default as ArtsyIcon, ArtsyIconProps } from './src/artsy-icons';
-export { default as ArtsyIconNames } from './src/artsy-icons.names';
-export { default as ArtsyCircleIcon } from './src/artsy-circle-icon';
-export type { ArtsyIconName } from './src/artsy-icons.names';
+import ArtsyFontBase from './src/artsy-icons.style';
+import ArtsyIcon, { ArtsyIconProps } from './src/artsy-icons';
+import ArtsyIconNames from './src/artsy-icons.names';
+import ArtsyCircleIcon from './src/artsy-circle-icon';
+import type { ArtsyIconName } from './src/artsy-icons.names';
 
 // Spectrum
-export type { SpectrumIconProps } from './src/spectrum-icons';
-export {
-  default as SpectrumIcon,
+import type { SpectrumIconProps } from './src/spectrum-icons';
+import SpectrumIcon, {
   SvgWrapper as SpectrumSvgWrapper,
   InlineSvg as SpectrumInlineSvg,
 } from './src/spectrum-icons';
+
+export {
+  AntFontIconBase,
+  AntIcon,
+  AntIconProps,
+  AntIconNames,
+  ArtsyFontBase,
+  ArtsyIcon,
+  ArtsyIconProps,
+  ArtsyIconNames,
+  ArtsyCircleIcon,
+  ArtsyIconName,
+  SpectrumIconProps,
+  SpectrumIcon,
+  SpectrumSvgWrapper,
+  SpectrumInlineSvg,
+};
