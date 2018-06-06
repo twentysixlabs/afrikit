@@ -1,4 +1,5 @@
 // @flow
+// Ref: https://github.com/JedWatson/classnames/blob/master/index.js
 
 const hasOwn = {}.hasOwnProperty;
 

@@ -6,12 +6,13 @@
  * @example
  * // Styles as object usage
  * const styles = {
- *   ...ellipsis('250px')
+ *   ...truncate('250px')
  * }
  *
  * // styled-components usage
  * const div = styled.div`
- *   ${ellipsis('250px')}
+ *   ${truncate('250px')}
+ *   background: papayawhip;
  * `
  *
  * // CSS as JS Output
@@ -26,15 +27,16 @@
  * }
  */
 
-function ellipsis(width?: string | number = '100%'): Object {
+function truncate(width?: string | number = '100%'): Object {
   return {
     display: 'inline-block',
     maxWidth: width,
+    minWidth: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     wordWrap: 'normal',
-  }
+  };
 }
 
-export default ellipsis
+export default truncate;

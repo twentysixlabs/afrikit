@@ -15,7 +15,7 @@ import {
   pulsate,
   growAndFadeIn,
   shrinkAndFadeOut,
-} from './theme-animations';
+} from './theme-keyframes';
 
 import transitions from './theme-transitions';
 import colors from './theme-colors';
@@ -25,9 +25,18 @@ import tint from '../utils/color/tint';
 import rgba from '../utils/color/rgba';
 import hsv from '../utils/color/hsv';
 
-// import { tint, rgba, hsv } from '../utils';
-
-// const { tint, rgba, hsv } = require('../utils');
+import {
+  primaryFontSizes,
+  secondaryFontSizes,
+  fontFallBackStack,
+  primaryFontStack,
+  secondaryFontStack,
+  monoFontStack,
+  primaryFontObj,
+  secondaryFontObj,
+  pfont,
+  sfont,
+} from './theme-typography';
 
 const theme = {
   // -------- Colors -----------
@@ -69,9 +78,9 @@ const theme = {
   bodyBackground: '#fff',
   // Base background color for most components
   componentBackground: '#fff',
-  fontFamilyNoNumber: `${'-appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
-  fontFamily: `${'"lato", -appleSystem, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sansSerif'}`,
-  codeFamily: 'Consolas, Menlo, Courier, monospace',
+  fontFamilyNoNumber: fontFallBackStack,
+  fontFamily: primaryFontStack,
+  codeFamily: monoFontStack,
   headingColor: rgba('#000', 0.85),
   textColor: rgba('#000', 0.65),
   textColorSecondary: rgba('#000', 0.45),
@@ -82,6 +91,17 @@ const theme = {
   fontSizeLg: rem(16),
   fontSizeSm: rem(12),
   lineHeightBase: 1.5,
+
+  // Typographic Sizes and Family
+  primaryFontSizes,
+  secondaryFontSizes,
+  fontFallBackStack,
+  primaryFontStack,
+  secondaryFontStack,
+  primaryFontObj,
+  secondaryFontObj,
+  pfont,
+  sfont,
 
   // vertical paddings
   paddingLg: rem(24), // containers
@@ -150,6 +170,9 @@ const theme = {
   shadow1Left: `-2px 0 8px rgba(0, 0, 0, 0.15)`,
   shadow1Right: `2px 0 8px rgba(0, 0, 0, 0.15)`,
   shadow2: `0 4px 12px rgba(0, 0, 0, 0.15)`,
+  shadowLow: '0 2px 8px',
+  shadowMid: '0 4px 12px',
+  shadowHigh: '0 8px 16px',
 
   // Buttons
   btnFontWeight: 400,

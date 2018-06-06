@@ -32,10 +32,11 @@ import addEventListenerWrap from './helpers/add-event-listener/add-event-listene
 import omit from './helpers/omit';
 import shallowEqual from './helpers/shallowequal';
 import classNames from './helpers/classnames';
+import parseUnit from './helpers/parseUnit';
 
 // Mixins
 import clearFix from './mixins/clearFix';
-import ellipsis from './mixins/ellipsis';
+import truncate from './mixins/truncate';
 import fontFace from './mixins/fontFace';
 import hideText from './mixins/hideText';
 import hideVisually from './mixins/hideVisually';
@@ -48,6 +49,9 @@ import selection from './mixins/selection';
 import timingFunctions from './mixins/timingFunctions';
 import triangle from './mixins/triangle';
 import wordWrap from './mixins/wordWrap';
+import block from './mixins/block';
+import mediaBreakpoint from './mixins/mediaBreakpoint';
+import resetComponent from './mixins/resetComponent';
 
 // Shorthands
 import animation from './shorthands/animation';
@@ -110,9 +114,10 @@ export {
   omit,
   shallowEqual,
   classNames,
+  parseUnit,
   // Mixins
   clearFix,
-  ellipsis,
+  truncate,
   fontFace,
   hideText,
   hideVisually,
@@ -125,6 +130,9 @@ export {
   timingFunctions,
   triangle,
   wordWrap,
+  block,
+  mediaBreakpoint,
+  resetComponent,
   // Shorthand
   animation,
   backgroundImages,

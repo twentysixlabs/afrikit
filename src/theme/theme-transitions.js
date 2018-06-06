@@ -16,6 +16,17 @@ const themeTransitions = {
   easeOutQuint: 'cubic-bezier(0.23, 1, 0.32, 1)',
   easeInQuint: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)',
   easeInOutQuint: 'cubic-bezier(0.86, 0, 0.07, 1)',
+  hover: {
+    on: 'all 0.2s ease-in',
+    off: 'all 0.2s ease-out',
+  },
+  reaction: {
+    on: 'all 0.15s ease-in',
+    off: 'all 0.1s ease-out',
+  },
+  dropdown: {
+    off: 'all 0.35s ease-out',
+  },
 };
 
 export default themeTransitions;

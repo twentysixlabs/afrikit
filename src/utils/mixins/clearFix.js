@@ -24,14 +24,20 @@
  */
 
 function clearFix(parent?: string = '&'): Object {
-  const pseudoSelector = `${parent}::after`
+  const pseudoSelector = `${parent}::after`;
+  const beforeSelector = `${parent}::before`;
   return {
+    zoom: 1,
+    [beforeSelector]: {
+      content: '""',
+      display: 'table',
+    },
     [pseudoSelector]: {
       clear: 'both',
       content: '""',
       display: 'table',
     },
-  }
+  };
 }
 
-export default clearFix
+export default clearFix;
