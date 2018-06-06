@@ -3,6 +3,7 @@ import ifProp from './tools/ifProp';
 import prop from './tools/prop';
 import switchProp from './tools/switchProp';
 import withProp from './tools/withProp';
+import pT from './tools/pT';
 import { add, subtract, multiply, divide } from './tools/math';
 import {
   is,
@@ -151,6 +152,7 @@ export {
   // Tools
   ifProp,
   prop,
+  pT,
   switchProp,
   withProp,
   add,
