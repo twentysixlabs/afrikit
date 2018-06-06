@@ -13,10 +13,7 @@ import { is } from './util-helpers';
 const prop = (path: string, defaultValue?: any): any => (
   props: Object = {},
 ) => {
-  if (is(props.theme)) {
-    return get(props.theme, path, defaultValue);
-  }
-  return get(theme, path, defaultValue);
+  return get(props, path, defaultValue);
 };
 
 export default prop;

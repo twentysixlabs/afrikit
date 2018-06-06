@@ -227,20 +227,28 @@ const theme = {
   // Media queries breakpoints
 
   breakpoints: {
-    xs: 0, // rem
-    sm: 48, // rem
-    md: 64, // rem
-    lg: 75, // rem
+    xs: 0, // em
+    sm: 48, // em
+    md: 64, // em
+    lg: 75, // em
     xl: 85,
   },
   flexboxgrid: {
     // Defaults
-    gutterWidth: 3, // rem
-    outerMargin: 2, // rem
+    gridSize: 24,
+    gutterWidth: 1, // rem
+    outerMargin: 1, // rem
     container: {
       sm: 46, // rem
       md: 61, // rem
       lg: 76, // rem
+    },
+    breakpoints: {
+      xs: 0, // em
+      sm: 48, // em
+      md: 64, // em
+      lg: 75, // em
+      xl: 85,
     },
   },
 

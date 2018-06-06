@@ -2,10 +2,10 @@
 import { css } from 'styled-components';
 
 const breakpoints = {
-  xs: 0, // rem
-  sm: 48, // rem
-  md: 64, // rem
-  lg: 75, // rem
+  xs: 0, // em
+  sm: 48, // em
+  md: 64, // em
+  lg: 75, // em
 };
 
 const mediaBreakpoint: any = Object.keys(breakpoints).reduce(
