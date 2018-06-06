@@ -1,5 +1,7 @@
 // @flow
 
+import { keyframes } from 'styled-components';
+
 export const loadingCircle = keyframes`
   0% {
     transform-origin: 50% 50%;

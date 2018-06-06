@@ -1,6 +1,6 @@
 // @flow
 import { css } from 'styled-components';
-import { rem } from '../utils';
+import rem from '../utils/helpers/rem';
 
 export const primaryFontSizes = {
   s11: {
