@@ -177,24 +177,24 @@ const theme = {
   // Buttons
   btnFontWeight: 400,
   btnBorderRadiusBase: '4px',
-  btnborderRadiusSm: '4px',
+  btnBorderRadiusSm: '4px',
 
-  btnprimaryColor: '#fff',
-  btnprimaryBg: colors.blue6, //primaryColor,
+  btnPrimaryColor: '#fff',
+  btnPrimaryBg: colors.blue6, //primaryColor,
 
-  btndefaultColor: rgba('#000', 0.65), // textColor
-  btndefaultBg: '#fff',
-  btndefaultBorder: hsv(0, 0, 0.85), //borderColorBase;
+  btnDefaultColor: rgba('#000', 0.65), // textColor
+  btnDefaultBg: '#fff',
+  btnDefaultBorder: hsv(0, 0, 0.85), //borderColorBase;
 
-  btndangerColor: colors.red6, // errorColor;
-  btndangerBg: hsv(0, 0, 0.96), //backgroundColorBase;
-  btndangerBorder: hsv(0, 0, 0.85), //borderColorBase;
+  btnDangerColor: colors.red6, // errorColor;
+  btnDangerBg: hsv(0, 0, 0.96), //backgroundColorBase;
+  btnDangerBorder: hsv(0, 0, 0.85), //borderColorBase;
 
-  btndisableColor: rgba('#000', 0.25), //disabledColor;
-  btndisableBg: hsv(0, 0, 0.98), // disabledBg;
-  btndisableBorder: hsv(0, 0, 0.85), //borderColorBase;
+  btnDisableColor: rgba('#000', 0.25), //disabledColor;
+  btnDisableBg: hsv(0, 0, 0.98), // disabledBg;
+  btnDisableBorder: hsv(0, 0, 0.85), //borderColorBase;
 
-  btnpaddingBase: `0 ${rem(15)}`, // 0 paddingMd - 1px;
+  btnPaddingBase: `0 ${rem(15)}`, // 0 paddingMd - 1px;
   btnFontSizeLg: rem(16), //fontSizeLg;
   btnFontSizeSm: rem(14), //fontSizeBase;
   btnPaddingLg: `0 ${rem(15)}`, // btnPaddingBase;

@@ -1,5 +1,4 @@
 // @flow
-import get from 'lodash.get';
 import { theme } from '../../theme';
 import { is } from './util-helpers';
 
@@ -11,10 +10,17 @@ import { is } from './util-helpers';
  * `;
  */
 const pT = (path: string, defaultValue?: any): any => (props: Object = {}) => {
-  if (is(props.theme)) {
-    return get(props.theme, path, defaultValue);
+  const thetheme = props.theme || theme;
+  if (thetheme[path]) {
+    return thetheme[path];
   }
-  return get(theme, path, defaultValue);
+  return is(defaultValue) ? defaultValue : '';
 };
 
 export default pT;
+
+// Alternate implementation
+// import get from 'lodash.get';
+//
+// const thetheme = props.theme || theme;
+// return get(thetheme, path, defaultValue);
