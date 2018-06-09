@@ -15,17 +15,26 @@
     "url": "https://github.com/Africademy/afrikit/issues"
   },
   "homepage": "https://github.com/Africademy/afrikit#readme",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "private": true,
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
-    "dist"
+    "css",
+    "es",
+    "lib",
+    "umd"
   ],
   "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server",
     "compile": "yarn clean && yarn compile:prod",
     "compile:prod": "babel src --out-dir dist --ignore \"**/__tests__\"",
     "compile:commonjs": "MODULES=commonjs babel src --out-dir dist/cjs --ignore \"**/__tests__\"",
-    "clean": "rimraf dist",
+    "clean:raf": "rimraf dist",
     "lint": "eslint .",
     "lint:staged": "lint-staged"
   },
@@ -49,6 +58,7 @@
     "eslint-config-react-app": "^2.1.0",
     "flow-bin": "^0.73.0",
     "lint-staged": "^7.1.2",
+    "nwb": "^0.21.5",
     "pre-commit": "^1.2.2",
     "prettier": "^1.12.1",
     "prettier-eslint": "^8.8.1",

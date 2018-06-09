@@ -1,5 +1,9 @@
 # dependencies
 /node_modules
+/demo/dist
+/es
+/lib
+/umd
 
 # testing
 /coverage

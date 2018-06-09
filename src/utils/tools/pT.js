@@ -1,20 +1,18 @@
 // @flow
 import { theme } from '../../theme';
-import { is } from './util-helpers';
 
-/**
- * Returns the value of `props.theme[path]` or `defaultValue`
- * @example
- * const Button = styled.button`
- *  color: ${pT("color", "red")};
- * `;
- */
-const pT = (path: string, defaultValue?: any): any => (props: Object = {}) => {
+// Returns the value of `props.theme[path]` or `defaultValue`
+// @example
+// const Button = styled.button`
+//  color: ${pT("color", "red")};
+// `;
+
+const pT = (path, defaultValue = '') => (props = {}) => {
   const thetheme = props.theme || theme;
   if (thetheme[path]) {
     return thetheme[path];
   }
-  return is(defaultValue) ? defaultValue : '';
+  return defaultValue;
 };
 
 export default pT;

@@ -8,7 +8,7 @@ const breakpoints = {
   lg: 75, // em
 };
 
-const mediaBreakpoint: any = Object.keys(breakpoints).reduce(
+const mediaBreakpoint = Object.keys(breakpoints).reduce(
   (theaccumulator, label) => {
     // using px in breakpoints to maintain uniform units with flexbox-grid
     // https://zellwk.com/blog/media-query-units/
