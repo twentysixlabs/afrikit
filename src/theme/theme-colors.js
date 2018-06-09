@@ -1,5 +1,5 @@
 // @flow
-const toHexColor = require('../utils/color/to-color').default;
+const toHexColor = require('../utils/color/to-hex-color').default;
 
 const baseBlue = '#1890ff';
 const basePurple = '#722ed1';

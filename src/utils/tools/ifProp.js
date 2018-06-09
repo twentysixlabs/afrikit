@@ -11,13 +11,11 @@ import type { Needle } from '.';
  * @example
  * // usage with styled-theme
  * import styled from "styled-components";
- * import { ifProp } from "styled-tools";
- * import { palette } from "styled-theme";
+ * import { ifProp, toColor } from "afrikit";
  *
  * const Button = styled.button`
  *   background-color: ${ifProp("transparent", "transparent", palette(0))};
- *   color: ${ifProp(["transparent", "accent"], palette("secondary", 0))};
- *   font-size: ${ifProp({ size: "large" }, "20px", ifProp({ size: "medium" }, "16px", "12px"))};
+ *   color: ${ifProp(["transparent", "accent"], toColor("red", 0))};
  * `;
  */
 const ifProp = (

@@ -17,7 +17,7 @@ import {
   shrinkAndFadeOut,
 } from './theme-keyframes';
 
-import transitions from './theme-transitions';
+// import transitions from './theme-transitions';
 import colors from './theme-colors';
 
 import rem from '../utils/helpers/rem';
@@ -139,7 +139,7 @@ const theme = {
   },
 
   // Transitions
-  ...transitions,
+  // ...transitions,
 
   // Border
   borderRadiusBase: '4px',

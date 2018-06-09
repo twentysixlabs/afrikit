@@ -1,5 +1,6 @@
 // @flow// Mostly Styled Tools
 import ifProp from './tools/ifProp';
+import ifPrp from './tools/ifPrp';
 import prop from './tools/prop';
 import switchProp from './tools/switchProp';
 import withProp from './tools/withProp';
@@ -98,6 +99,7 @@ import shade from './color/shade';
 import tint from './color/tint';
 import toColorString from './color/toColorString';
 import transparentize from './color/transparentize';
+import toHexColor from './color/to-hex-color';
 
 export {
   // Helpers,
@@ -151,6 +153,7 @@ export {
   transitions,
   // Tools
   ifProp,
+  ifPrp,
   prop,
   pT,
   switchProp,
@@ -196,4 +199,5 @@ export {
   tint,
   toColorString,
   transparentize,
+  toHexColor,
 };

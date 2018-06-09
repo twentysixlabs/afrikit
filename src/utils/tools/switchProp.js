@@ -7,7 +7,7 @@ import type { Needle } from './needle';
  * Switches on a given prop. Returns the value or function for a given prop value.
  * @example
  * import styled, { css } from "styled-components";
- * import { switchProp, prop } from "styled-tools";
+ * import { switchProp, prop } from "afrikit";
  *
  * const Button = styled.button`
  *  font-size: ${switchProp(prop("size", "medium"), {

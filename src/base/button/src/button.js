@@ -1,14 +1,9 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
-import { findDOMNode } from 'react-dom';
-import { classNames, omit } from '../../../utils';
+import { classNames } from '../../../utils';
 import { AntIcon as Icon } from '../../icon';
-import Group from './button-group';
-
-function isString(str: any) {
-  return typeof str === 'string';
-}
+import getButtonStyles from './styled';
 
 export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger';
 export type ButtonShape = 'circle' | 'circle-outline';
@@ -35,7 +30,20 @@ export type NativeButtonProps =
 
 export type ButtonProps = AnchorButtonProps | NativeButtonProps;
 
-export default class Button extends React.Component<ButtonProps, any> {
+const StyledButton = styled.button`
+  ${getButtonStyles};
+`;
+StyledButton.displayName = 'StyledButton';
+
+// Target the <a> here to override a:hover specificity.
+const StyledLink = styled.a`
+  a& {
+    ${getButtonStyles};
+  }
+`;
+StyledLink.displayName = 'StyledLink';
+
+class Button extends React.Component<ButtonProps, any> {
   static defaultProps: ButtonProps;
 
   timeout: number;
@@ -100,6 +108,10 @@ export default class Button extends React.Component<ButtonProps, any> {
     return React.Children.count(children) === 1 && !icon;
   }
 
+  getStyledComponent() {
+    return this.props.href ? StyledLink : StyledButton;
+  }
+
   render() {
     const {
       type,
@@ -129,16 +141,16 @@ export default class Button extends React.Component<ButtonProps, any> {
         break;
     }
 
-    const ComponentProp = (others: AnchorButtonProps).href ? 'a' : 'button';
+    const StyledComponent = this.getStyledComponent();
 
     const classes = classNames(prefixCls, className, {
-      [`${prefixCls}-${type}`]: type,
-      [`${prefixCls}-${shape}`]: shape,
-      [`${prefixCls}-${sizeCls}`]: sizeCls,
-      [`${prefixCls}-icon-only`]: !children && icon,
-      [`${prefixCls}-loading`]: loading,
-      [`${prefixCls}-clicked`]: clicked,
-      [`${prefixCls}-background-ghost`]: ghost,
+      [`btn-${type}`]: type,
+      [`btn-${shape}`]: shape,
+      [`btn-${sizeCls}`]: sizeCls,
+      [`btn-icon-only`]: !children && icon,
+      [`btn-loading`]: loading,
+      [`btn-clicked`]: clicked,
+      [`btn-background-ghost`]: ghost,
     });
 
     const iconType = loading ? 'loading' : icon;
@@ -149,8 +161,8 @@ export default class Button extends React.Component<ButtonProps, any> {
         : null;
 
     return (
-      <ComponentProp
-        {...omit(others, ['loading'])}
+      <StyledComponent
+        {...this.props}
         type={
           (others: AnchorButtonProps).href ? undefined : htmlType || 'button'
         }
@@ -159,7 +171,21 @@ export default class Button extends React.Component<ButtonProps, any> {
       >
         {iconNode}
         {kids}
-      </ComponentProp>
+      </StyledComponent>
     );
   }
 }
+
+export default Button;
+
+// <StyledComponent
+// {...omit(others, ['loading'])}
+// type={
+//   (others: AnchorButtonProps).href ? undefined : htmlType || 'button'
+// }
+// className={classes}
+// onClick={this.handleClick}
+// >
+// {iconNode}
+// {kids}
+// </StyledComponent>

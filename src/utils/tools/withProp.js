@@ -8,8 +8,7 @@ import type { Needle } from './needle';
  * @example
  * // example with polished
  * import styled from "styled-components";
- * import { darken } from "polished";
- * import { withProp, prop } from "styled-tools";
+ * import { darken, withProp, prop } from "afrikit";
  *
  * const Button = styled.button`
  *   border-color: ${withProp(prop("theme.primaryColor", "blue"), darken(0.5))};
