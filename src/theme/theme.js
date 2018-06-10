@@ -252,6 +252,10 @@ const theme = {
     },
   },
 
+  systemBreakpoints: ['40em', '52em', '64em'],
+  systemSpace: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  systemFontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+
   // Extra small screen / phone
   screenXs: rem(480),
   screenXsMin: rem(480), // screenXs;

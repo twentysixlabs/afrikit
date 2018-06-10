@@ -2,12 +2,14 @@
 
 // Ant
 import AntFontIconBase from './src/ant-icons.style';
-import AntIcon, { AntIconProps } from './src/ant-icons';
+import AntIcon from './src/ant-icons';
+import type { AntIconProps } from './src/ant-icons';
 import AntIconNames from './src/ant-icons.names';
 
 // Artsy
 import ArtsyFontBase from './src/artsy-icons.style';
-import ArtsyIcon, { ArtsyIconProps } from './src/artsy-icons';
+import ArtsyIcon from './src/artsy-icons';
+import type { ArtsyIconProps } from './src/artsy-icons';
 import ArtsyIconNames from './src/artsy-icons.names';
 import ArtsyCircleIcon from './src/artsy-circle-icon';
 import type { ArtsyIconName } from './src/artsy-icons.names';

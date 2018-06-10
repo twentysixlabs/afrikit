@@ -3,15 +3,15 @@
 import * as React from 'react';
 import { classNames, omit } from '../../../utils';
 
-export interface AntIconProps {
-  type: string;
-  className?: string;
-  title?: string;
+export type AntIconProps = {
+  type: string,
+  className?: string,
+  title?: string,
   // onClick?: (e: SyntheticEvent<any>) => any;
-  onClick?: Function;
-  spin?: boolean;
-  style?: Object;
-}
+  onClick?: Function,
+  spin?: boolean,
+  style?: Object,
+};
 
 const Icon = (props: AntIconProps) => {
   const { type, className = '', spin } = props;

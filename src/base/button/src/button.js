@@ -10,15 +10,15 @@ export type ButtonShape = 'circle' | 'circle-outline';
 export type ButtonSize = 'small' | 'default' | 'large';
 export type ButtonState = 'default' | 'loading' | 'success' | 'failure';
 
-export interface BaseButtonProps {
-  type?: ButtonType;
-  htmlType?: string;
-  icon?: string;
-  shape?: ButtonShape;
-  size?: ButtonSize;
-  loading?: boolean | { delay?: number };
-  className?: string;
-}
+export type BaseButtonProps = {
+  type?: ButtonType,
+  htmlType?: string,
+  icon?: string,
+  shape?: ButtonShape,
+  size?: ButtonSize,
+  loading?: boolean | { delay?: number },
+  className?: string,
+};
 
 export type AnchorButtonProps =
   | BaseButtonProps

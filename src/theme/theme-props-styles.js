@@ -5,8 +5,8 @@ import {
   responsiveStyle,
   complexStyle,
   getWidth,
-  num,
 } from './theme-props-util';
+import { num } from '../tools';
 
 // core
 export { default as space } from './theme-props-space';

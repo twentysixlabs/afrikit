@@ -1,5 +1,6 @@
 // @flow
-import Button, {
+import Button from './src/button';
+import type {
   ButtonProps,
   ButtonShape,
   ButtonSize,
