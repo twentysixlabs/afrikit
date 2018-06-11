@@ -1,4 +1,5 @@
 // @flow
+import expect from 'expect';
 import statefulSelectors from '../_statefulSelectors';
 
 const mockStateMap = [null, ':before', ':after'];

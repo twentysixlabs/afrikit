@@ -1,5 +1,6 @@
 // @flow
-import triangle from '../triangle'
+import expect from 'expect';
+import triangle from '../triangle';
 
 describe('triangle', () => {
   it('should generate a proper triangle when passed all parameters', () => {
@@ -11,8 +12,8 @@ describe('triangle', () => {
         height: 10,
         width: 20,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should default to a transparent background when not passed a backgroundColor', () => {
     expect({
@@ -22,8 +23,8 @@ describe('triangle', () => {
         height: 10,
         width: 20,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should generate a proper triangle when passed string values for height and width', () => {
     expect({
@@ -34,8 +35,8 @@ describe('triangle', () => {
         height: '10px',
         width: '20px',
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should properly add rules when block has existing rules', () => {
     expect({
@@ -46,8 +47,8 @@ describe('triangle', () => {
         height: 10,
         width: 20,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should properly render top pointing arrow with green foregroundColor, width of 20px and height 20px', () => {
     expect({
@@ -57,8 +58,8 @@ describe('triangle', () => {
         height: 20,
         width: 20,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should properly render right pointing arrow with width of 20px and height 10px', () => {
     expect({
@@ -68,8 +69,8 @@ describe('triangle', () => {
         height: 10,
         width: 20,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should properly render bottom pointing arrow with red foregroundColor, width of 20px and height 20px', () => {
     expect({
@@ -79,8 +80,8 @@ describe('triangle', () => {
         height: 20,
         width: 10,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should properly render left pointing arrow with blue foregroundColor, width of 10px and height 20px', () => {
     expect({
@@ -90,8 +91,8 @@ describe('triangle', () => {
         height: 20,
         width: 10,
       }),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should throw an error when pointingDirection is not provided', () => {
     expect(() => {
@@ -100,9 +101,11 @@ describe('triangle', () => {
         foregroundColor: 'blue',
         height: 20,
         width: 10,
-      })
-    }).toThrow("Passed invalid argument to triangle, please pass correct pointingDirection e.g. 'right'.")
-  })
+      });
+    }).toThrow(
+      "Passed invalid argument to triangle, please pass correct pointingDirection e.g. 'right'.",
+    );
+  });
 
   it('should throw an error when pointingDirection does not match corresponding options', () => {
     expect(() => {
@@ -112,9 +115,11 @@ describe('triangle', () => {
         height: 20,
         width: 10,
         pointingDirection: false,
-      })
-    }).toThrow("Passed invalid argument to triangle, please pass correct pointingDirection e.g. 'right'.")
-  })
+      });
+    }).toThrow(
+      "Passed invalid argument to triangle, please pass correct pointingDirection e.g. 'right'.",
+    );
+  });
 
   it('should throw an error when height or width is not a unit based value.', () => {
     expect(() => {
@@ -123,7 +128,9 @@ describe('triangle', () => {
         height: 'inherit',
         width: 'inherit',
         pointingDirection: 'bottom',
-      })
-    }).toThrow('Passed an invalid value to `height` or `width`. Please provide a pixel based unit')
-  })
-})
+      });
+    }).toThrow(
+      'Passed an invalid value to `height` or `width`. Please provide a pixel based unit',
+    );
+  });
+});

@@ -1,5 +1,6 @@
 // @flow
-import animation from '../animation'
+import expect from 'expect';
+import animation from '../animation';
 
 describe('animation', () => {
   describe('single mode', () => {
@@ -15,12 +16,12 @@ describe('animation', () => {
           'forwards',
           'paused',
         ),
-      }).toMatchSnapshot()
-    })
+      }).toMatchSnapshot();
+    });
 
     it('should be fine with less than eight arguments', () => {
-      expect({ ...animation('rotate', '1s', 'ease-in-out') }).toMatchSnapshot()
-    })
+      expect({ ...animation('rotate', '1s', 'ease-in-out') }).toMatchSnapshot();
+    });
 
     it('should throw an error if more than eight elements are supplied', () => {
       expect(() => {
@@ -34,10 +35,10 @@ describe('animation', () => {
           'seven',
           'eight',
           'oops',
-        )
-      }).toThrow()
-    })
-  })
+        );
+      }).toThrow();
+    });
+  });
 
   describe('multi mode', () => {
     it('should pass first eight arguments to the CSS in multi mode', () => {
@@ -52,20 +53,20 @@ describe('animation', () => {
           'forwards',
           'paused',
         ]),
-      }).toMatchSnapshot()
-    })
+      }).toMatchSnapshot();
+    });
 
     it('should be fine with less than eight arguments', () => {
       expect({
         ...animation(['rotate', '1s', 'ease-in-out']),
-      }).toMatchSnapshot()
-    })
+      }).toMatchSnapshot();
+    });
 
     it('should be fine with multiple animations', () => {
       expect({
         ...animation(['rotate', '1s', 'ease-in-out'], ['colorchange', '2s']),
-      }).toMatchSnapshot()
-    })
+      }).toMatchSnapshot();
+    });
 
     it('should throw an error if more than eight elements are supplied in an array', () => {
       expect(() => {
@@ -79,9 +80,9 @@ describe('animation', () => {
           'seven',
           'eight',
           'oops',
-        ])
-      }).toThrow()
-    })
+        ]);
+      }).toThrow();
+    });
 
     it('should throw an error if more than eight elements are supplied in a second array', () => {
       expect(() => {
@@ -98,20 +99,20 @@ describe('animation', () => {
             'eight',
             'oops',
           ],
-        )
-      }).toThrow()
-    })
-  })
+        );
+      }).toThrow();
+    });
+  });
 
   it('should not allow arrays in single mode', () => {
     expect(() => {
-      animation('rotate', ['move', '2s'], '1s')
-    }).toThrow()
-  })
+      animation('rotate', ['move', '2s'], '1s');
+    }).toThrow();
+  });
 
   it('should not allow simple root level values in multi mode', () => {
     expect(() => {
-      animation(['move', '2s'], 'rotate', '2s')
-    }).toThrow()
-  })
-})
+      animation(['move', '2s'], 'rotate', '2s');
+    }).toThrow();
+  });
+});

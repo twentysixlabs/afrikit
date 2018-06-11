@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`placeholder should properly add rules when block has existing rules 1`] = `
+Object {
+  "&:-moz-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+    "opacity": 1,
+  },
+  "&:-ms-input-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+  },
+  "&::-moz-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+    "opacity": 1,
+  },
+  "&::-webkit-input-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+  },
+  "background": "white",
+}
+`;
+
+exports[`placeholder should properly default to & when not passed a parent 1`] = `
+Object {
+  "input": Object {
+    "&:-moz-placeholder": Object {
+      "color": Object {
+        "color": "blue",
+      },
+      "opacity": 1,
+    },
+    "&:-ms-input-placeholder": Object {
+      "color": Object {
+        "color": "blue",
+      },
+    },
+    "&::-moz-placeholder": Object {
+      "color": Object {
+        "color": "blue",
+      },
+      "opacity": 1,
+    },
+    "&::-webkit-input-placeholder": Object {
+      "color": Object {
+        "color": "blue",
+      },
+    },
+  },
+}
+`;
+
+exports[`placeholder should properly pass styles object and parent 1`] = `
+Object {
+  "&:-moz-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+    "opacity": 1,
+  },
+  "&:-ms-input-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+  },
+  "&::-moz-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+    "opacity": 1,
+  },
+  "&::-webkit-input-placeholder": Object {
+    "0": "i",
+    "1": "n",
+    "2": "p",
+    "3": "u",
+    "4": "t",
+    "color": Object {
+      "color": "blue",
+    },
+  },
+}
+`;

@@ -1,4 +1,5 @@
 // @flow
+import expect from 'expect';
 import directionalProperty from '../directionalProperty';
 
 describe('directionalProperty', () => {

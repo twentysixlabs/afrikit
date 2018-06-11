@@ -1,16 +1,17 @@
 // @flow
-import wordWrap from '../wordWrap'
+import expect from 'expect';
+import wordWrap from '../wordWrap';
 
 describe('wordWrap', () => {
   it('should accept other values', () => {
     expect({
       ...wordWrap('break-all'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should default wrap to break-word', () => {
     expect({
       ...wordWrap(),
-    }).toMatchSnapshot()
-  })
-})
+    }).toMatchSnapshot();
+  });
+});

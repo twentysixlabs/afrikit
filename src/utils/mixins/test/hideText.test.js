@@ -1,15 +1,16 @@
 // @flow
-import hideText from '../hideText'
+import expect from 'expect';
+import hideText from '../hideText';
 
 describe('hideText', () => {
   it('should return the CSS in JS', () => {
-    expect({ ...hideText() }).toMatchSnapshot()
-  })
+    expect({ ...hideText() }).toMatchSnapshot();
+  });
 
   it('should add rules when block has existing rules', () => {
     expect({
       'background-image': 'url(logo.png)',
       ...hideText(),
-    }).toMatchSnapshot()
-  })
-})
+    }).toMatchSnapshot();
+  });
+});

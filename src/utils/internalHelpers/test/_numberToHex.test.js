@@ -1,4 +1,5 @@
 // @flow
+import expect from 'expect';
 import numberToHex from '../_numberToHex';
 
 describe('numberToHex', () => {

@@ -1,4 +1,5 @@
 // @flow
+import expect from 'expect';
 import pxto from '../_pxto';
 
 describe('pxto', () => {

@@ -1,4 +1,5 @@
 // @flow
+import expect from 'expect';
 import reduceHexValue from '../_reduceHexValue';
 
 describe('reduceHexValue', () => {

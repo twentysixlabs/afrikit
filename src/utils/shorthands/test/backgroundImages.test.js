@@ -1,11 +1,13 @@
-import backgroundImages from '../backgroundImages'
+// @flow
+import expect from 'expect';
+import backgroundImages from '../backgroundImages';
 
 describe('backgroundImages', () => {
   it('should generate a single background from a parameter', () => {
     expect({
       ...backgroundImages('url("/image/background.jpg")'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should generate a multiple backgroundImages from multiple parameters', () => {
     expect({
@@ -13,6 +15,6 @@ describe('backgroundImages', () => {
         'url("/image/background.jpg")',
         'linear-gradient(red, green)',
       ),
-    }).toMatchSnapshot()
-  })
-})
+    }).toMatchSnapshot();
+  });
+});

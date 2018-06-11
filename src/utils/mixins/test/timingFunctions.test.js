@@ -1,148 +1,149 @@
 // @flow
-import timingFunctions from '../timingFunctions'
+import expect from 'expect';
+import timingFunctions from '../timingFunctions';
 
 describe('timingFunctions', () => {
   it('should return easeInBack cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInBack'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInCirc cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInCirc'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInCubic cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInCubic'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInExpo cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInExpo'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInQuad cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInQuad'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInQuart cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInQuart'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInQuint cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInQuint'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInSine cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInSine'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutBack cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutBack'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutCirc cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutCirc'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutCubic cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutCubic'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutExpo cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutExpo'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutQuad cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutQuad'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutQuart cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutQuart'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutQuint cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutQuint'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeOutSine cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeOutSine'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutBack cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutBack'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutCirc cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutCirc'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutCubic cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutCubic'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutExpo cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutExpo'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutQuad cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutQuad'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutQuart cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutQuart'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutQuint cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutQuint'),
-    }).toMatchSnapshot()
-  })
+    }).toMatchSnapshot();
+  });
 
   it('should return easeInOutSine cubic-bezier', () => {
     expect({
       'transition-timing-function': timingFunctions('easeInOutSine'),
-    }).toMatchSnapshot()
-  })
-})
+    }).toMatchSnapshot();
+  });
+});

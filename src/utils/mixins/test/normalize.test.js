@@ -1,11 +1,12 @@
 // @flow
-import normalize from '../normalize'
+import expect from 'expect';
+import normalize from '../normalize';
 
 describe('normalize', () => {
   it('should default to all rules', () => {
-    expect(normalize()).toMatchSnapshot()
-  })
+    expect(normalize()).toMatchSnapshot();
+  });
   it('should only return unopinionated rules, when passed true', () => {
-    expect(normalize(true)).toMatchSnapshot()
-  })
-})
+    expect(normalize(true)).toMatchSnapshot();
+  });
+});
