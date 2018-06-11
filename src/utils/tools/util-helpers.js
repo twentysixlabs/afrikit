@@ -1,9 +1,11 @@
 // @flow
-import { get as lodashGet } from 'lodash.get';
-import { reduce as lodashReduce } from 'lodash.reduce';
-import { values as lodashValues } from 'lodash.values';
-import { difference as lodashDifference } from 'lodash.difference';
-import { at as lodashAt } from 'lodash.at';
+import lodashGet from 'lodash.get';
+import lodashReduce from 'lodash.reduce';
+import lodashValues from 'lodash.values';
+import lodashDifference from 'lodash.difference';
+import lodashAt from 'lodash.at';
+import lodashIsString from 'lodash.isstring';
+import lodashFlatten from 'lodash.flatten';
 
 export const is = n => n !== undefined && n !== null;
 // eslint-disable-next-line
@@ -16,3 +18,5 @@ export const reduce = lodashReduce;
 export const values = lodashValues;
 export const difference = lodashDifference;
 export const at = lodashAt;
+export const isString = lodashIsString;
+export const flatten = lodashFlatten;

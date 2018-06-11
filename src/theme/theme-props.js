@@ -1,75 +1,5 @@
 // @flow
-import ThemeReset from './theme-reset';
-import ThemeHelperClasses from './theme-helper-classes';
-import themeColors from './theme-colors';
-import themeTransitions from './theme-transitions';
-import theme from './theme';
-
 import {
-  primaryFontSizes,
-  secondaryFontSizes,
-  fontFallBackStack,
-  primaryFontStack,
-  secondaryFontStack,
-  monoFontStack,
-  primaryFontObj,
-  secondaryFontObj,
-  pfont,
-  sfont,
-} from './theme-typography';
-
-// KeyFrames
-import {
-  fadeIn,
-  fadeOut,
-  fadeAndScaleIn,
-  pulsate,
-  growAndFadeIn,
-  shrinkAndFadeOut,
-  moveUpIn,
-  moveUpOut,
-  moveDownIn,
-  moveDownOut,
-  moveLeftIn,
-  moveLeftOut,
-  moveRightIn,
-  moveRightOut,
-  slideUpIn,
-  slideUpOut,
-  slideDownIn,
-  slideDownOut,
-  slideLeftIn,
-  slideLeftOut,
-  slideRightIn,
-  slideRightOut,
-  swingIn,
-  zoomIn,
-  zoomOut,
-  zoomBigIn,
-  zoomBigOut,
-  zoomUpIn,
-  zoomUpOut,
-  zoomDownIn,
-  zoomDownOut,
-  zoomLeftIn,
-  zoomLeftOut,
-  zoomRightIn,
-  zoomRightOut,
-} from './theme-keyframes';
-
-import {
-  motionCollapse,
-  addFadeMotion,
-  addMoveMotion,
-  addSlideMotion,
-  addSwingMotion,
-  addZoomMotion,
-} from './theme-animations';
-
-import {
-  styles,
-  util,
-  propTypes,
   space,
   width,
   fontSize,
@@ -150,69 +80,116 @@ import {
   buttonStyle,
   // deprecated
   borderWidth,
-} from './theme-props';
+} from './theme-props-styles';
+
+import {
+  style,
+  pseudoStyle,
+  responsiveStyle,
+  complexStyle,
+  themeGet,
+} from './theme-props-util';
+
+const styles = {
+  space,
+  width,
+  fontSize,
+  textColor,
+  bgColor,
+  color,
+  // typography
+  fontFamily,
+  textAlign,
+  lineHeight,
+  fontWeight,
+  letterSpacing,
+  // layout
+  display,
+  maxWidth,
+  minWidth,
+  height,
+  maxHeight,
+  minHeight,
+  sizeWidth,
+  sizeHeight,
+  size,
+  ratioPadding,
+  ratio,
+  // flexbox
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  flexBasis,
+  flexDirection,
+  flex,
+  justifySelf,
+  alignSelf,
+  order,
+  // grid
+  gridGap,
+  gridColumnGap,
+  gridRowGap,
+  gridColumn,
+  gridRow,
+  gridAutoFlow,
+  gridAutoColumns,
+  gridAutoRows,
+  gridTemplateColumns,
+  gridTemplateRows,
+  // borders
+  border,
+  borderTop,
+  borderRight,
+  borderBottom,
+  borderLeft,
+  borders,
+  borderColor,
+  borderRadius,
+  // misc
+  boxShadow,
+  background,
+  backgroundImage,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  // position
+  position,
+  zIndex,
+  top,
+  right,
+  bottom,
+  left,
+  // psuedoclasses
+  hover,
+  focus,
+  active,
+  disabled,
+  // complex
+  textStyle,
+  colorStyle,
+  buttonStyle,
+  // deprecated
+  borderWidth,
+};
+
+const util = {
+  style,
+  pseudoStyle,
+  responsiveStyle,
+  complexStyle,
+  themeGet,
+};
+
+const propTypes = {};
+
+Object.keys(styles).forEach(key => {
+  propTypes[key] = styles[key].propTypes;
+});
+
+styles.propTypes = propTypes;
 
 export {
-  ThemeReset,
-  ThemeHelperClasses,
-  themeColors,
-  themeTransitions,
-  theme,
-  // Theme Typography
-  primaryFontSizes,
-  secondaryFontSizes,
-  fontFallBackStack,
-  primaryFontStack,
-  secondaryFontStack,
-  monoFontStack,
-  primaryFontObj,
-  secondaryFontObj,
-  pfont,
-  sfont,
-  // KeyFrames
-  fadeIn,
-  fadeOut,
-  fadeAndScaleIn,
-  pulsate,
-  growAndFadeIn,
-  shrinkAndFadeOut,
-  moveUpIn,
-  moveUpOut,
-  moveDownIn,
-  moveDownOut,
-  moveLeftIn,
-  moveLeftOut,
-  moveRightIn,
-  moveRightOut,
-  slideUpIn,
-  slideUpOut,
-  slideDownIn,
-  slideDownOut,
-  slideLeftIn,
-  slideLeftOut,
-  slideRightIn,
-  slideRightOut,
-  swingIn,
-  zoomIn,
-  zoomOut,
-  zoomBigIn,
-  zoomBigOut,
-  zoomUpIn,
-  zoomUpOut,
-  zoomDownIn,
-  zoomDownOut,
-  zoomLeftIn,
-  zoomLeftOut,
-  zoomRightIn,
-  zoomRightOut,
-  // Global Animations
-  motionCollapse,
-  addFadeMotion,
-  addMoveMotion,
-  addSlideMotion,
-  addSwingMotion,
-  addZoomMotion,
-  // System
   styles,
   util,
   propTypes,

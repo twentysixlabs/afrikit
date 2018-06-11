@@ -1,6 +1,6 @@
 // @flow
 import expect from 'expect';
-import kindOf from '../index';
+import kindOf from '../kindOf';
 
 describe('kindOf', () => {
   describe('null and undefined', () => {
@@ -97,21 +97,21 @@ describe('kindOf', () => {
       expect(kindOf(promise)).toEqual('promise');
     });
 
-    it('should work for generator functions', () => {
-      // eslint-disable-next-line
-      const gen = function* named() {
-        return true;
-      };
-      expect(kindOf(gen)).toEqual('generatorfunction');
-    });
+    // it('should work for generator functions', () => {
+    //   // eslint-disable-next-line
+    //   const gen = function* named() {
+    //     return true;
+    //   };
+    //   expect(kindOf(gen)).toEqual('generatorfunction');
+    // });
 
-    it('should work for generator objects', () => {
-      // eslint-disable-next-line
-      const gen = function* named() {
-        return true;
-      };
-      expect(kindOf(gen())).toEqual('generator');
-    });
+    // it('should work for generator objects', () => {
+    //   // eslint-disable-next-line
+    //   const gen = function* named() {
+    //     return true;
+    //   };
+    //   expect(kindOf(gen())).toEqual('generator');
+    // });
 
     it('should work for template strings', () => {
       /* eslint quotes: 0 */

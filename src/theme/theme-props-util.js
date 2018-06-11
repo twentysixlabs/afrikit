@@ -1,8 +1,8 @@
 // @flow
 
 import PropTypes from 'prop-types';
-import defaultTheme from './theme';
-import { is, num, px, arr, get } from '../tools';
+import theme from './theme';
+import { is, num, px, arr, get } from '../utils';
 
 const propTypes = {
   responsive: PropTypes.oneOfType([
@@ -17,13 +17,13 @@ export const getWidth = n => (!num(n) || n > 1 ? px(n) : `${n * 100}%`);
 export const mq = n => `@media screen and (min-width: ${px(n)})`;
 
 export const fallbackTheme = props => ({
-  ...defaultTheme,
+  ...theme,
   ...get(props, 'theme'),
 });
 
 export const breaks = props => [
   null,
-  ...get(props, 'theme.spaceBreakpoints', theme.spaceBreakpoints).map(mq),
+  ...get(props, 'theme.systemBreakpoints', theme.systemBreakpoints).map(mq),
 ];
 
 export const dec = props => val =>

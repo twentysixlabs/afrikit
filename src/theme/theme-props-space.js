@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { breaks, dec, media, merge } from './theme-props-util';
 import theme from './theme';
-import { neg, num, px, arr, get } from '../tools';
+import { neg, num, px, arr, get } from '../utils';
 
 const REG = /^[mp][trblxy]?$/;
 

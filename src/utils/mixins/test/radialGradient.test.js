@@ -59,7 +59,7 @@ describe('radialGradient', () => {
         fallback: '#FFF',
       });
     }).toThrow(
-      'radialGradient requries at least 2 color-stops to properly render.',
+      'radialGradient requires at least 2 color-stops to properly render.',
     );
   });
 });

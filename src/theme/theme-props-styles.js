@@ -6,7 +6,7 @@ import {
   complexStyle,
   getWidth,
 } from './theme-props-util';
-import { num } from '../tools';
+import { num } from '../utils';
 
 // core
 export { default as space } from './theme-props-space';

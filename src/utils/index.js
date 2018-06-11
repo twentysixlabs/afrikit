@@ -17,6 +17,8 @@ import {
   difference,
   get,
   values,
+  isString,
+  flatten,
 } from './tools/util-helpers';
 
 // Helpers
@@ -172,6 +174,8 @@ export {
   difference,
   get,
   values,
+  isString,
+  flatten,
   // Color Funcs
   adjustHue,
   complement,
