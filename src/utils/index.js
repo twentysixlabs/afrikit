@@ -103,6 +103,18 @@ import toColorString from './color/toColorString';
 import transparentize from './color/transparentize';
 import toHexColor from './color/to-hex-color';
 
+import cleanElement from './html/cleanElement';
+import cleanTag from './html/cleanTag';
+import htmlTag from './html/htmlTag';
+import { htmlTags, voidHtmlTags } from './html/htmlTags';
+import kindOf from './html/kindOf';
+import {
+  svgElements,
+  voidElements,
+  selfClosingTags,
+  isSelfClosing,
+} from './html/selfClosingTags';
+
 export {
   // Helpers,
   directionalProperty,
@@ -204,4 +216,15 @@ export {
   toColorString,
   transparentize,
   toHexColor,
+  // html
+  cleanElement,
+  cleanTag,
+  htmlTag,
+  htmlTags,
+  voidHtmlTags,
+  kindOf,
+  svgElements,
+  voidElements,
+  selfClosingTags,
+  isSelfClosing,
 };

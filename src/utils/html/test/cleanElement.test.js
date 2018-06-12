@@ -4,7 +4,7 @@ import expect from 'expect';
 import React from 'react';
 import styled from 'styled-components';
 import { renderToString } from 'react-dom/server';
-import { textAlign, propTypes } from '../../../theme/theme-props';
+import { textAlign, propTypes } from '../../../theme/space';
 import cleanElement from '../cleanElement';
 
 describe('cleanElement', () => {

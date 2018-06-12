@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spaced Base Component renders 1`] = `null`;
+
+exports[`Spaced Base Component renders children 1`] = `
+Array [
+  <div
+    className=" sc-bdVaJa bDWFJH"
+  >
+    Hello
+  </div>,
+  <h2
+    className=" sc-bdVaJa bDWFJH"
+  >
+    hi
+  </h2>,
+]
+`;

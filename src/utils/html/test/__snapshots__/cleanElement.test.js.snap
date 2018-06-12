@@ -3,7 +3,3 @@
 exports[`cleanElement does not remove props without propTypes 1`] = `"<div class=\\"cleanElementtest__Box-kdszWu eYbyRo\\" id=\\"beep\\" textAlign=\\"center\\" data-reactroot=\\"\\">hello</div>"`;
 
 exports[`cleanElement removes props with prop types 1`] = `"<div class=\\"cleanElementtest__Box-kdszWu eYbyRo\\" id=\\"beep\\" data-reactroot=\\"\\">hello</div>"`;
-
-exports[`darken does not remove props without propTypes 1`] = `"<div class=\\"cleanElementtest__Box-kdszWu eYbyRo\\" id=\\"beep\\" textAlign=\\"center\\" data-reactroot=\\"\\">hello</div>"`;
-
-exports[`darken removes props with prop types 1`] = `"<div class=\\"cleanElementtest__Box-kdszWu eYbyRo\\" id=\\"beep\\" data-reactroot=\\"\\">hello</div>"`;

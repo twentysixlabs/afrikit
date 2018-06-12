@@ -226,13 +226,13 @@ const theme = {
 
   // Media queries breakpoints
 
-  breakpoints: {
-    xs: 0, // em
-    sm: 48, // em
-    md: 64, // em
-    lg: 75, // em
-    xl: 85,
-  },
+  // breakpoints: {
+  //   xs: 0, // em
+  //   sm: 48, // em
+  //   md: 64, // em
+  //   lg: 75, // em
+  //   xl: 85,
+  // },
   flexboxgrid: {
     // Defaults
     gridSize: 24,
@@ -252,9 +252,9 @@ const theme = {
     },
   },
 
-  systemBreakpoints: ['40em', '52em', '64em'],
-  systemSpace: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  systemFontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+  breakpoints: ['40em', '52em', '64em'],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 
   // Extra small screen / phone
   screenXs: rem(480),

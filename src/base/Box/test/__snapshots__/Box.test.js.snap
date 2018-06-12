@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box Component Box renders 1`] = `
+<div
+  className="sc-bdVaJa goNBYt"
+/>
+`;
+
+exports[`Box Component Box renders with props 1`] = `
+<div
+  className="sc-bdVaJa chFJb"
+/>
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex Base Component Flex renders 1`] = `
+<div
+  className="sc-bwzfXH pjOvZ"
+/>
+`;
+
+exports[`Flex Base Component Flex renders with flexDirection prop 1`] = `
+<div
+  className="sc-bwzfXH eVPJMi"
+/>
+`;
+
+exports[`Flex Base Component Flex renders with legacy props 1`] = `
+<div
+  className="sc-bwzfXH ZBlQU"
+/>
+`;
+
+exports[`Flex Base Component Flex renders with props 1`] = `
+<div
+  className="sc-bwzfXH ZBlQU"
+/>
+`;
+
+exports[`Flex Base Component Flex renders with responsive props 1`] = `
+<div
+  className="sc-bwzfXH bfWgCL"
+/>
+`;

@@ -1,8 +1,7 @@
 // @flow
 
 import PropTypes from 'prop-types';
-import theme from './theme';
-import { is, num, px, arr, get } from '../utils';
+import theme from '../theme';
 
 const propTypes = {
   responsive: PropTypes.oneOfType([
@@ -13,7 +12,17 @@ const propTypes = {
   numberOrString: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
+export const is = n => n !== undefined && n !== null;
+// eslint-disable-next-line
+export const num = n => typeof n === 'number' && !isNaN(n);
+export const px = n => (num(n) ? `${n}px` : n);
+export const neg = n => n < 0;
+export const arr = n => (Array.isArray(n) ? n : [n]);
+
 export const getWidth = n => (!num(n) || n > 1 ? px(n) : `${n * 100}%`);
+export const get = (obj, path, fallback) =>
+  path.split('.').reduce((a, b) => (a && a[b] ? a[b] : null), obj) || fallback;
+
 export const mq = n => `@media screen and (min-width: ${px(n)})`;
 
 export const fallbackTheme = props => ({
@@ -23,29 +32,26 @@ export const fallbackTheme = props => ({
 
 export const breaks = props => [
   null,
-  ...get(props, 'theme.systemBreakpoints', theme.systemBreakpoints).map(mq),
+  ...get(props, 'theme.breakpoints', theme.breakpoints).map(mq),
 ];
 
+// eslint-disable-next-line
 export const dec = props => val =>
-  // eslint-disable-next-line
-  arr(props).reduce((acc, prop) => ((acc[prop] = val), acc), {});
+  arr(props)
+    // eslint-disable-next-line
+    .reduce((acc, prop) => ((acc[prop] = val), acc), {});
 
-export const media = bp => (d, i) => {
-  if (is(d)) {
-    if (bp[i]) {
-      return { [bp[i]]: d };
-    }
-    return d;
-  }
-  return null;
-};
+// eslint-disable-next-line
+export const media = bp => (d, i) =>
+  // eslint-disable-next-line
+  is(d) ? (bp[i] ? { [bp[i]]: d } : d) : null;
 
 export const merge = (a, b) =>
   Object.assign(
     {},
     a,
     b,
-    Object.keys(b).reduce(
+    Object.keys(b || {}).reduce(
       (obj, key) =>
         Object.assign(obj, {
           [key]:
@@ -57,15 +63,9 @@ export const merge = (a, b) =>
     ),
   );
 
-export const getValue = (val, getter, toPx) => {
-  if (typeof getter === 'function') {
-    return getter(val);
-  }
-  if (toPx) {
-    return px(val);
-  }
-  return val;
-};
+export const getValue = (val, getter, toPx) =>
+  // eslint-disable-next-line
+  typeof getter === 'function' ? getter(val) : toPx ? px(val) : val;
 
 export const style = ({
   prop, // react prop
@@ -110,8 +110,9 @@ export const responsiveStyle = ({
 
     const bp = breaks(props);
     const th = fallbackTheme(props);
-    const sx = nx =>
-      getValue(get(th, [key || prop, nx].join('.'), nx), getter, numberToPx);
+    // eslint-disable-next-line
+    const sx = n =>
+      getValue(get(th, [key || prop, n].join('.'), n), getter, numberToPx);
 
     if (!Array.isArray(n)) {
       return {
@@ -147,27 +148,23 @@ export const pseudoStyle = ({
   numberToPx = {},
 }) => {
   const fn = props => {
-    const styles = props[prop] || props[alias];
+    // eslint-disable-next-line
+    const style = props[prop] || props[alias];
     // eslint-disable-next-line
     pseudoclass = pseudoclass || prop;
     const th = fallbackTheme(props);
-    if (styles) {
+    // eslint-disable-next-line
+    for (let key in style) {
+      const toPx = numberToPx[key];
       // eslint-disable-next-line
-      for (const key in styles) {
-        const toPx = numberToPx[key];
-        // eslint-disable-next-line
-        if (!keys[key] && !getters[key] && !toPx) continue;
-        const themeKey = [keys[key], styles[key]].join('.');
-        styles[key] = getValue(
-          get(th, themeKey, styles[key]),
-          getters[key],
-          toPx,
-        );
-      }
+      if (!keys[key] && !getters[key] && !toPx) continue;
+      const themeKey = [keys[key], style[key]].join('.');
+      style[key] = getValue(get(th, themeKey, style[key]), getters[key], toPx);
     }
 
     return {
-      [`&:${pseudoclass}`]: style,
+      // eslint-disable-next-line
+      ['&:' + pseudoclass]: style,
     };
   };
   fn.propTypes = {
@@ -183,7 +180,8 @@ export const themeGet = (keys, fallback) => props =>
 
 const getBooleans = props => {
   const bools = [];
-  for (const key in props) {
+  // eslint-disable-next-line
+  for (let key in props) {
     // eslint-disable-next-line
     if (props[key] !== true) continue;
     bools.push(key);
@@ -193,19 +191,20 @@ const getBooleans = props => {
 
 export const complexStyle = ({ prop, key, alias }) => {
   const fn = props => {
-    let styles = get(
+    // eslint-disable-next-line
+    let style = get(
       props,
       ['theme', key, get(props, prop, props[alias])].join('.'),
       {},
     );
     const bools = getBooleans(props);
     bools.forEach(name => {
-      styles = {
-        ...styles,
+      style = {
+        ...style,
         ...get(props, ['theme', key, name].join('.'), {}),
       };
     });
-    return styles;
+    return style;
   };
 
   fn.propTypes = {

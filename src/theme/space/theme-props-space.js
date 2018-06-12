@@ -1,8 +1,17 @@
 // @flow
 import PropTypes from 'prop-types';
-import { breaks, dec, media, merge } from './theme-props-util';
-import theme from './theme';
-import { neg, num, px, arr, get } from '../utils';
+import {
+  get,
+  arr,
+  px,
+  neg,
+  num,
+  breaks,
+  dec,
+  media,
+  merge,
+} from './theme-props-util';
+import theme from '../theme';
 
 const REG = /^[mp][trblxy]?$/;
 
@@ -11,7 +20,7 @@ export const space = props => {
     .filter(key => REG.test(key))
     .sort();
   const bp = breaks(props);
-  const sc = get(props, 'theme.systemSpace', theme.systemSpace);
+  const sc = get(props, 'theme.space', theme.space);
 
   return keys
     .map(key => {

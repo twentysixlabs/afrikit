@@ -1,12 +1,15 @@
 // @flow
+// eslint-disable-next-line
+import * as util from './theme-props-util';
 import {
   style,
   pseudoStyle,
   responsiveStyle,
   complexStyle,
   getWidth,
+  merge,
+  // eslint-disable-next-line
 } from './theme-props-util';
-import { num } from '../utils';
 
 // core
 export { default as space } from './theme-props-space';
@@ -57,7 +60,7 @@ export const textAlign = responsiveStyle({
   alias: 'align',
 });
 
-export const lineHeight = style({
+export const lineHeight = responsiveStyle({
   prop: 'lineHeight',
   key: 'lineHeights',
 });
@@ -120,10 +123,8 @@ export const sizeHeight = responsiveStyle({
   numberToPx: true,
 });
 
-export const size = props => ({
-  ...sizeWidth(props),
-  ...sizeHeight(props),
-});
+export const size = props => merge(sizeHeight(props), sizeWidth(props));
+
 size.propTypes = {
   ...sizeWidth.propTypes,
   ...sizeHeight.propTypes,
@@ -132,7 +133,8 @@ size.propTypes = {
 export const ratioPadding = style({
   prop: 'ratio',
   cssProperty: 'paddingBottom',
-  getter: n => `${n * 100}%`,
+  // eslint-disable-next-line
+  getter: n => n * 100 + '%',
 });
 
 export const ratio = props =>
@@ -244,7 +246,8 @@ export const gridTemplateRows = responsiveStyle({
 });
 
 // borders
-const getBorder = n => (num(n) && n > 0 ? `${n}px solid` : n);
+// eslint-disable-next-line
+const getBorder = n => (util.num(n) && n > 0 ? n + 'px solid' : n);
 
 export const border = responsiveStyle({
   prop: 'border',
