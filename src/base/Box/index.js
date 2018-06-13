@@ -8,9 +8,9 @@ import {
   fontSize,
   order,
   alignSelf,
-} from '../../theme/space';
+  theme,
+} from '../../theme';
 import { cleanTag } from '../../utils';
-import { theme } from '../../theme';
 
 const Box = styled(cleanTag)(
   [],

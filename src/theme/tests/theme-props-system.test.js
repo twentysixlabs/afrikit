@@ -68,6 +68,7 @@ describe('cleanElement', () => {
       p: 3,
       bg: 'tomato',
     });
+    // eslint-disable-next-line
     const json = render(<Box />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/padding:16px/);
@@ -89,6 +90,7 @@ describe('cleanElement', () => {
   test('accepts custom function arguments', () => {
     const big = props => (props.big ? { padding: '64px' } : null);
     const Box = system(big);
+    // eslint-disable-next-line
     const json = render(<Box big />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/padding:64px/);
@@ -121,6 +123,7 @@ describe('cleanElement', () => {
 
   test('accepts a style function argument', () => {
     const Box = system(props => `color:${props.color};`);
+    // eslint-disable-next-line
     const json = render(<Box color="magenta" />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/color:magenta/);
@@ -133,6 +136,7 @@ describe('cleanElement', () => {
       },
     };
     const Box = system({ color: 'blue', theme });
+    // eslint-disable-next-line
     const json = render(<Box />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/color:#0af/);
@@ -140,6 +144,7 @@ describe('cleanElement', () => {
 
   test('passes css string arguments', () => {
     const Box = system('color:cyan;');
+    // eslint-disable-next-line
     const json = render(<Box />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/color:cyan;/);
@@ -149,6 +154,7 @@ describe('cleanElement', () => {
     const Box = system(scCSS`
       color: ${props => props.color};
     `);
+    // eslint-disable-next-line
     const json = render(<Box color="yellow" />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/color:yellow/);
@@ -164,6 +170,7 @@ describe('cleanElement', () => {
       'color',
     );
     const ExtendedBox = system({ is: Box });
+    // eslint-disable-next-line
     const json = render(<ExtendedBox />).toJSON();
     const css = getCSS();
     expect(css).toMatch(/background-color:tomato/);

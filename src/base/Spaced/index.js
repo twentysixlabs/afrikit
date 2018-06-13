@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { space } from '../../theme/space';
+import { space } from '../../theme';
 
 const classnames = (...args) => args.join(' ');
 const getClassName = el => (el.props && el.props.className) || '';

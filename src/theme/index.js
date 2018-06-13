@@ -66,6 +66,8 @@ import {
   addZoomMotion,
 } from './theme-animations';
 
+import sys from './theme-props-system';
+
 export {
   ThemeReset,
   ThemeHelperClasses,
@@ -127,3 +129,7 @@ export {
   addSwingMotion,
   addZoomMotion,
 };
+
+export * from './space';
+
+export { sys };

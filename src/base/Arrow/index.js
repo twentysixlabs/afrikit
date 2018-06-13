@@ -1,5 +1,5 @@
 // @flow
-import sys from '../../theme';
+import { sys } from '../../theme';
 
 export const Arrow = sys(
   {

@@ -89,7 +89,6 @@ export {
   responsiveStyle,
   complexStyle,
   themeGet,
-  themeGet as theme,
 } from './theme-props-util';
 
 export const propTypes = {};

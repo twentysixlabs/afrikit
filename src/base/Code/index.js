@@ -1,21 +1,17 @@
 // @flow
 import { sys } from '../../theme';
 
-export const Pre = sys(
+export const Code = sys(
   {
-    is: 'pre',
+    is: 'code',
     fontSize: 1,
     fontFamily: 'mono',
-    m: 0,
-  },
-  {
-    overflow: 'auto',
   },
   'fontFamily',
   'space',
   'color',
 );
 
-Pre.displayName = 'Pre';
+Code.displayName = 'Code';
 
-export default Pre;
+export default Code;
