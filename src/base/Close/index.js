@@ -1,7 +1,7 @@
 // @flow
 import { sys } from '../../theme';
 
-import ButtonTransparent from './ButtonTransparent';
+import { ButtonTransparent } from '../ButtonTransparent';
 
 export const Close = sys(
   {

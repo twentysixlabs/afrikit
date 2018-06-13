@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import Text from './Text';
+import { Text } from '../Text';
 import { letterSpacing } from '../../theme';
 
 export const Caps = styled(Text)([], letterSpacing, {

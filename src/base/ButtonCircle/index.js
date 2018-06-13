@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import Button from './Button';
+import { Button } from '../Button';
 
 export const ButtonCircle = styled(Button)([]);
 

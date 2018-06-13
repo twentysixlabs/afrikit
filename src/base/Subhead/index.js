@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import { sys } from '../../theme';
-import { Heading as HeadingComp } from '../Heading';
+import { Heading } from '../Heading';
 
-const Base = props => <HeadingComp is="h3" {...props} />;
+const Base = props => <Heading is="h3" {...props} />;
 
 export const Subhead = sys({
   is: Base,

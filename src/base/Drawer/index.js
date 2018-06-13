@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import { space, color, zIndex } from '../../theme/space';
+import { space, color, zIndex } from '../../theme';
 import { Fixed } from '../Position';
 
 export const drawerOpen = ({ open, position, size }) => {

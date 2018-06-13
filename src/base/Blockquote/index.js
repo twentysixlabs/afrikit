@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import { sys } from '../../theme/space';
+import { sys } from '../../theme';
 
-import Text from './Text';
+import { Text } from '../Text';
 
 export const Base = props => <Text {...props} is="blockquote" />;
 

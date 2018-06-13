@@ -1,7 +1,7 @@
 // @flow
 import styled from 'styled-components';
 import { themeGet } from '../../theme';
-import Button from './Button';
+import { Button } from '../Button';
 
 export const ButtonTransparent = styled(Button)([], props => ({
   '&:hover': {

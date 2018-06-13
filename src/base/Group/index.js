@@ -1,6 +1,6 @@
 // @flow
 import { theme, sys } from '../../theme';
-import { Flex } from '../Flex';
+import { Flex } from '../Grid';
 
 export const Group = sys(
   {

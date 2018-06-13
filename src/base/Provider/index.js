@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import RootComp from '../Root';
+import { Root } from '../Root';
 import { theme as defaultTheme } from '../../theme';
 
 export class Provider extends React.Component {
@@ -14,7 +14,7 @@ export class Provider extends React.Component {
 
     return (
       <ThemeProvider theme={{ ...defaultTheme, ...theme }}>
-        <RootComp {...props} />
+        <Root {...props} />
       </ThemeProvider>
     );
   }

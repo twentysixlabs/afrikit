@@ -2,30 +2,30 @@
 
 exports[`Flex Base Component Flex renders 1`] = `
 <div
-  className="sc-bwzfXH pjOvZ"
+  className="sc-htpNat lkxzRx"
 />
 `;
 
 exports[`Flex Base Component Flex renders with flexDirection prop 1`] = `
 <div
-  className="sc-bwzfXH eVPJMi"
+  className="sc-htpNat xcdXl"
 />
 `;
 
 exports[`Flex Base Component Flex renders with legacy props 1`] = `
 <div
-  className="sc-bwzfXH ZBlQU"
+  className="sc-htpNat ifvbUv"
 />
 `;
 
 exports[`Flex Base Component Flex renders with props 1`] = `
 <div
-  className="sc-bwzfXH ZBlQU"
+  className="sc-htpNat gXOAWf"
 />
 `;
 
 exports[`Flex Base Component Flex renders with responsive props 1`] = `
 <div
-  className="sc-bwzfXH bfWgCL"
+  className="sc-htpNat clVwEz"
 />
 `;

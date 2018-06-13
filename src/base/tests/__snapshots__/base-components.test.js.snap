@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base Components Provider renders 1`] = `
+<div
+  className="sc-htpNat jTsUru"
+/>
+`;
+
+exports[`Base Components Provider renders with custom theme 1`] = `
+<div
+  className="sc-htpNat jTsUru"
+/>
+`;
+
+exports[`Base Components renders Arrow up 1`] = `
+<div
+  className="sc-caSCKo eTIFeU"
+  direction="up"
+/>
+`;
+
+exports[`Base Components renders BackgroundImage src 1`] = `
+<div
+  className="sc-cvbbAY gHFMQW"
+  src="hello.png"
+/>
+`;
+
+exports[`Base Components renders Banner backgroundImage 1`] = `
+<div
+  className="sc-bRBYWo gAatsR sc-jAaTju jIXVIA"
+  src="hello.png"
+/>
+`;
+
+exports[`Base Components renders Border border 2 1`] = `
+<div
+  className="sc-gPEVay MPPor"
+/>
+`;
+
+exports[`Base Components renders Border bottom 1`] = `
+<div
+  className="sc-gPEVay ehVvdJ"
+/>
+`;
+
+exports[`Base Components renders Border left 1`] = `
+<div
+  className="sc-gPEVay ibGjSK"
+/>
+`;
+
+exports[`Base Components renders Border none 1`] = `
+<div
+  className="sc-gPEVay fEaWOm"
+/>
+`;
+
+exports[`Base Components renders Border right 1`] = `
+<div
+  className="sc-gPEVay lkAqIC"
+/>
+`;
+
+exports[`Base Components renders Border top 1`] = `
+<div
+  className="sc-gPEVay iUiZjs"
+/>
+`;
+
+exports[`Base Components renders Carousel index 1`] = `
+<div
+  className="sc-frDJqD fCjzOl sc-jAaTju jIXVIA"
+  index={2}
+/>
+`;
+
+exports[`Base Components renders Drawer open 1`] = `
+<div
+  className="sc-hmzhuo jUouhL sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={true}
+  position="left"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer open position bottom 1`] = `
+<div
+  className="sc-hmzhuo iFlqAk sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={true}
+  position="bottom"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer open position left 1`] = `
+<div
+  className="sc-hmzhuo jUouhL sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={true}
+  position="left"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer open position right 1`] = `
+<div
+  className="sc-hmzhuo jkAQjb sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={true}
+  position="right"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer open position top 1`] = `
+<div
+  className="sc-hmzhuo hrNQwI sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={true}
+  position="top"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer position bottom 1`] = `
+<div
+  className="sc-hmzhuo gwGzIj sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={false}
+  position="bottom"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer position left 1`] = `
+<div
+  className="sc-hmzhuo kWSVyo sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={false}
+  position="left"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer position right 1`] = `
+<div
+  className="sc-hmzhuo cUqYjx sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={false}
+  position="right"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer position top 1`] = `
+<div
+  className="sc-hmzhuo cNAVWg sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={false}
+  position="top"
+  size={320}
+/>
+`;
+
+exports[`Base Components renders Drawer size 1`] = `
+<div
+  className="sc-hmzhuo kpoGon sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  open={false}
+  position="left"
+  size={128}
+/>
+`;
+
+exports[`Base Components renders Embed ratio 1`] = `
+<div
+  className="sc-brqgnP fIMqAf"
+/>
+`;
+
+exports[`Base Components renders NavLink active 1`] = `
+<a
+  active={true}
+  className="sc-htoDjs dWhcED"
+/>
+`;
+
+exports[`Base Components renders Text bold 1`] = `
+<div
+  className="sc-gZMcBi jRQWRt"
+/>
+`;

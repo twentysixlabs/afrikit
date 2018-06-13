@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styles matches Scrollable 1`] = `
+<div
+  className="Row-ciskzD icVWwT"
+/>
+`;

@@ -1,6 +1,6 @@
 // @flow
 import { sys } from '../../theme';
-import Flex from '../Flex';
+import { Flex } from '../Grid';
 
 export const carouselIndex = ({ index }) => ({
   '& > div:first-child': {

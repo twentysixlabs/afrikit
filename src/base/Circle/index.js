@@ -1,6 +1,6 @@
 // @flow
 import { sys } from '../../theme';
-import Badge from './Badge';
+import { Badge } from '../Badge';
 
 export const Circle = sys(
   {

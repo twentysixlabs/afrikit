@@ -1,5 +1,5 @@
 // @flow
-import { sys } from '../../theme/space';
+import { sys } from '../../theme';
 
 const css = props => props.css;
 

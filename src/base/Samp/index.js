@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import { sys } from '../../theme';
-import { Code as CodeComp } from '../Code';
+import { Code } from '../Code';
 
-const Base = props => <CodeComp is="samp" {...props} />;
+const Base = props => <Code is="samp" {...props} />;
 
 export const Samp = sys({
   is: Base,

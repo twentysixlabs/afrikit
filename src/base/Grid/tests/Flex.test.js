@@ -2,7 +2,7 @@
 import React from 'react';
 import expect from 'expect';
 import { create as render } from 'react-test-renderer';
-import Flex from '../index';
+import { Flex } from '../index';
 
 describe('Flex Base Component', () => {
   // Flex

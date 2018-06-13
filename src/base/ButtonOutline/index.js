@@ -1,7 +1,7 @@
 // @flow
-import styled from 'styled-components'
-import { themeGet } from '../../theme'
-import Button from './Button'
+import styled from 'styled-components';
+import { themeGet } from '../../theme';
+import { Button } from '../Button';
 
 export const ButtonOutline = styled(Button)([], props => ({
   boxShadow: `inset 0 0 0 2px`,
@@ -10,20 +10,22 @@ export const ButtonOutline = styled(Button)([], props => ({
     backgroundColor: themeGet('colors.blue')(props),
   },
   '&:focus': {
-    boxShadow: `inset 0 0 0 2px, 0 0 0 2px`
+    boxShadow: `inset 0 0 0 2px, 0 0 0 2px`,
   },
   '&:active': {
     color: 'white',
     backgroundColor: themeGet('colors.blue')(props),
-    boxShadow: `inset 0 0 0 2px ${themeGet(`colors.${props.color}`)(props)}, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`
-  }
-}))
+    boxShadow: `inset 0 0 0 2px ${themeGet(`colors.${props.color}`)(
+      props,
+    )}, inset 0 0 8px ${themeGet('colors.darken.1')(props)}`,
+  },
+}));
 
-ButtonOutline.displayName = 'ButtonOutline'
+ButtonOutline.displayName = 'ButtonOutline';
 
 ButtonOutline.defaultProps = {
   color: 'blue',
-  bg: 'transparent'
-}
+  bg: 'transparent',
+};
 
-export default ButtonOutline
+export default ButtonOutline;

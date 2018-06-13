@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { sys } from '../../theme';
-import Text from './Text';
+import { Text } from '../Text';
 
 export const Lead = sys({
   is: Text,

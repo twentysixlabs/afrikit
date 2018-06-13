@@ -225,15 +225,7 @@ const theme = {
   radioButtonActiveColor: colors.blue7, //primary-7;
 
   // Media queries breakpoints
-
-  // breakpoints: {
-  //   xs: 0, // em
-  //   sm: 48, // em
-  //   md: 64, // em
-  //   lg: 75, // em
-  //   xl: 85,
-  // },
-  flexboxgrid: {
+  gridConfig: {
     // Defaults
     gridSize: 24,
     gutterWidth: 1, // rem
@@ -243,16 +235,9 @@ const theme = {
       md: 61, // rem
       lg: 76, // rem
     },
-    breakpoints: {
-      xs: 0, // em
-      sm: 48, // em
-      md: 64, // em
-      lg: 75, // em
-      xl: 85,
-    },
   },
 
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: ['40em', '64em', '75em', '85em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 

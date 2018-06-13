@@ -1,7 +1,7 @@
 // @flow
 import { sys } from '../../theme';
 
-import Text from '../Text';
+import { Text } from '../Text';
 
 export const Measure = sys(
   {
