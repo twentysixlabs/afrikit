@@ -1,7 +1,9 @@
 // @flow
 import React from 'react';
-import { propTypes } from '../../../theme/space';
+import { styles } from '../../../theme/space';
 import { htmlTags } from '../htmlTags';
+
+const { propTypes } = styles;
 
 const allPropTypes = Object.keys(propTypes).reduce(
   (a, key) => Object.assign(a, propTypes[key]),

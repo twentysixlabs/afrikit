@@ -61,15 +61,15 @@ import resetComponent from './mixins/resetComponent';
 import animation from './shorthands/animation';
 import backgroundImages from './shorthands/backgroundImages';
 import backgrounds from './shorthands/backgrounds';
-import borderColor from './shorthands/borderColor';
-import borderRadius from './shorthands/borderRadius';
-import borderStyle from './shorthands/borderStyle';
-import borderWidth from './shorthands/borderWidth';
+// import borderColor from './shorthands/borderColor';
+// import borderRadius from './shorthands/borderRadius';
+// import borderStyle from './shorthands/borderStyle';
+// import borderWidth from './shorthands/borderWidth';
 import buttons from './shorthands/buttons';
 import margin from './shorthands/margin';
 import padding from './shorthands/padding';
-import position from './shorthands/position';
-import size from './shorthands/size';
+// import position from './shorthands/position';
+// import size from './shorthands/size';
 import textInputs from './shorthands/textInputs';
 import transitions from './shorthands/transitions';
 
@@ -154,15 +154,15 @@ export {
   animation,
   backgroundImages,
   backgrounds,
-  borderColor,
-  borderRadius,
-  borderStyle,
-  borderWidth,
+  // borderColor,
+  // borderRadius,
+  // borderStyle,
+  // borderWidth,
   buttons,
   margin,
   padding,
-  position,
-  size,
+  // position,
+  // size,
   textInputs,
   transitions,
   // Tools

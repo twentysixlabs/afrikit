@@ -1,7 +1,7 @@
 // @flow
 
 // export * from './button';
-// export * from './icon';
+export * from './icon';
 
 export { Box } from './Box';
 
@@ -38,7 +38,7 @@ export { Measure } from './Measure';
 export { Label } from './Label';
 export { Input } from './Input';
 export { Select } from './Select';
-export { Textarea } from './Textarea';
+export { Textarea } from './TextArea';
 export { Radio } from './Radio';
 export { Checkbox } from './Checkbox';
 export { Slider } from './Slider';

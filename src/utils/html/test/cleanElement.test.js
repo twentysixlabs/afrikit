@@ -4,8 +4,10 @@ import expect from 'expect';
 import React from 'react';
 import styled from 'styled-components';
 import { renderToString } from 'react-dom/server';
-import { textAlign, propTypes } from '../../../theme/space';
+import { textAlign, styles } from '../../../theme/space';
 import cleanElement from '../cleanElement';
+
+const { propTypes } = styles;
 
 describe('cleanElement', () => {
   it('removes props with prop types', () => {

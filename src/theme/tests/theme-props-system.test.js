@@ -12,11 +12,12 @@ import { create as render } from 'react-test-renderer';
 // eslint-disable-next-line
 import { isDOMComponent, isCompositeComponent } from 'react-dom/test-utils';
 
-import { propTypes } from '../space';
+import { styles } from '../space';
 import system from '../theme-props-system';
 
 // 😎
 const { StyleSheet } = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS;
+const { propTypes } = styles;
 
 const getCSS = () =>
   StyleSheet.instance

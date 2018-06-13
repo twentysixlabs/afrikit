@@ -1,6 +1,6 @@
 // @flow
 import { sys, themeGet } from '../../theme';
-import { Fixed } from '../Grid';
+import { Fixed } from '../Position';
 
 export const Modal = sys(
   {

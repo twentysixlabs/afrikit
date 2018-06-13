@@ -60,7 +60,7 @@ const Col = styled.div`
         k =>
           config(p).media[k]`${
             // eslint-disable-next-line
-            isInteger(p[k])
+            Number.isInteger(p[k])
               ? // Integer value
                 `
         flex-basis: ${(100 / config(p).gridSize) * p[k]}%;

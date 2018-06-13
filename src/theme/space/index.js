@@ -91,7 +91,7 @@ export {
   themeGet,
 } from './theme-props-util';
 
-export const propTypes = {};
+const propTypes = {};
 
 Object.keys(styles).forEach(key => {
   propTypes[key] = styles[key].propTypes;

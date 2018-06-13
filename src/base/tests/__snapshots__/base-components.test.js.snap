@@ -2,83 +2,83 @@
 
 exports[`Base Components Provider renders 1`] = `
 <div
-  className="sc-htpNat jTsUru"
+  className="sc-bxivhb mTdqx"
 />
 `;
 
 exports[`Base Components Provider renders with custom theme 1`] = `
 <div
-  className="sc-htpNat jTsUru"
+  className="sc-bxivhb mTdqx"
 />
 `;
 
 exports[`Base Components renders Arrow up 1`] = `
 <div
-  className="sc-caSCKo eTIFeU"
+  className="sc-gisBJw cdXxWo"
   direction="up"
 />
 `;
 
 exports[`Base Components renders BackgroundImage src 1`] = `
 <div
-  className="sc-cvbbAY gHFMQW"
+  className="sc-jWBwVP fpNRhw"
   src="hello.png"
 />
 `;
 
 exports[`Base Components renders Banner backgroundImage 1`] = `
 <div
-  className="sc-bRBYWo gAatsR sc-jAaTju jIXVIA"
+  className="sc-hzDkRC fMsqjN sc-jDwBTQ fvRAFR"
   src="hello.png"
 />
 `;
 
 exports[`Base Components renders Border border 2 1`] = `
 <div
-  className="sc-gPEVay MPPor"
+  className="sc-iRbamj dEAPjI"
 />
 `;
 
 exports[`Base Components renders Border bottom 1`] = `
 <div
-  className="sc-gPEVay ehVvdJ"
+  className="sc-iRbamj koKMMY"
 />
 `;
 
 exports[`Base Components renders Border left 1`] = `
 <div
-  className="sc-gPEVay ibGjSK"
+  className="sc-iRbamj hpvCmB"
 />
 `;
 
 exports[`Base Components renders Border none 1`] = `
 <div
-  className="sc-gPEVay fEaWOm"
+  className="sc-iRbamj eUtTPE"
 />
 `;
 
 exports[`Base Components renders Border right 1`] = `
 <div
-  className="sc-gPEVay lkAqIC"
+  className="sc-iRbamj erOyQC"
 />
 `;
 
 exports[`Base Components renders Border top 1`] = `
 <div
-  className="sc-gPEVay iUiZjs"
+  className="sc-iRbamj cwjjpQ"
 />
 `;
 
 exports[`Base Components renders Carousel index 1`] = `
 <div
-  className="sc-frDJqD fCjzOl sc-jAaTju jIXVIA"
+  className="sc-kvZOFW iXYPHb sc-jDwBTQ fvRAFR"
   index={2}
 />
 `;
 
 exports[`Base Components renders Drawer open 1`] = `
 <div
-  className="sc-hmzhuo jUouhL sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD nfxEF sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={true}
   position="left"
   size={320}
@@ -87,7 +87,7 @@ exports[`Base Components renders Drawer open 1`] = `
 
 exports[`Base Components renders Drawer open position bottom 1`] = `
 <div
-  className="sc-hmzhuo iFlqAk sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD dGHoFl sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={true}
   position="bottom"
   size={320}
@@ -96,7 +96,7 @@ exports[`Base Components renders Drawer open position bottom 1`] = `
 
 exports[`Base Components renders Drawer open position left 1`] = `
 <div
-  className="sc-hmzhuo jUouhL sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD nfxEF sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={true}
   position="left"
   size={320}
@@ -105,7 +105,7 @@ exports[`Base Components renders Drawer open position left 1`] = `
 
 exports[`Base Components renders Drawer open position right 1`] = `
 <div
-  className="sc-hmzhuo jkAQjb sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD dAwLKH sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={true}
   position="right"
   size={320}
@@ -114,7 +114,7 @@ exports[`Base Components renders Drawer open position right 1`] = `
 
 exports[`Base Components renders Drawer open position top 1`] = `
 <div
-  className="sc-hmzhuo hrNQwI sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD kFHNnh sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={true}
   position="top"
   size={320}
@@ -123,7 +123,7 @@ exports[`Base Components renders Drawer open position top 1`] = `
 
 exports[`Base Components renders Drawer position bottom 1`] = `
 <div
-  className="sc-hmzhuo gwGzIj sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD cStEcd sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={false}
   position="bottom"
   size={320}
@@ -132,7 +132,7 @@ exports[`Base Components renders Drawer position bottom 1`] = `
 
 exports[`Base Components renders Drawer position left 1`] = `
 <div
-  className="sc-hmzhuo kWSVyo sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD jFGpvY sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={false}
   position="left"
   size={320}
@@ -141,7 +141,7 @@ exports[`Base Components renders Drawer position left 1`] = `
 
 exports[`Base Components renders Drawer position right 1`] = `
 <div
-  className="sc-hmzhuo cUqYjx sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD caADMc sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={false}
   position="right"
   size={320}
@@ -150,7 +150,7 @@ exports[`Base Components renders Drawer position right 1`] = `
 
 exports[`Base Components renders Drawer position top 1`] = `
 <div
-  className="sc-hmzhuo cNAVWg sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD kkaFqL sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={false}
   position="top"
   size={320}
@@ -159,7 +159,7 @@ exports[`Base Components renders Drawer position top 1`] = `
 
 exports[`Base Components renders Drawer size 1`] = `
 <div
-  className="sc-hmzhuo kpoGon sc-kgAjT clagXJ sc-kjoXOD bpyTNq"
+  className="sc-frDJqD fyoFpB sc-cJSrbW cnUWKq sc-cHGsZl fBTdNA"
   open={false}
   position="left"
   size={128}
@@ -168,19 +168,19 @@ exports[`Base Components renders Drawer size 1`] = `
 
 exports[`Base Components renders Embed ratio 1`] = `
 <div
-  className="sc-brqgnP fIMqAf"
+  className="sc-cMljjf gnIyZy"
 />
 `;
 
 exports[`Base Components renders NavLink active 1`] = `
 <a
   active={true}
-  className="sc-htoDjs dWhcED"
+  className="sc-dnqmqq RKeDb"
 />
 `;
 
 exports[`Base Components renders Text bold 1`] = `
 <div
-  className="sc-gZMcBi jRQWRt"
+  className="sc-gqjmRU cbBDfA"
 />
 `;
