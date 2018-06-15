@@ -543,6 +543,63 @@ const theme = {
   collapseHeaderBg: hsv(0, 0, 0.98), // backgroundColorLight;
   collapseContentPadding: rem(16), // paddingMd;
   collapseContentBg: '#fff', //componentBackground
+
+  // CP PlayGround
+  cpColor: {
+    // Palette
+    primary: '#1EA7FD',
+    secondary: '#FC521F',
+    tertiary: '#DDDDDD',
+    ancillary: '#3C7384',
+
+    app: '#f6f9fc',
+
+    // Grayscale
+    lightest: '#FFFFFF',
+    lighter: '#F8F8F8',
+    light: '#F3F3F3',
+    mediumlight: '#EEEEEE',
+    medium: '#DDDDDD',
+    mediumdark: '#999999',
+    dark: '#666666',
+    darker: '#444444',
+    darkest: '#333333',
+  },
+  cpSpacing: {
+    padding: {
+      small: 10,
+      medium: 20,
+      large: 30,
+    },
+    borderRadius: {
+      small: 5,
+      default: 10,
+    },
+  },
+  cpTypography: {
+    type: {
+      primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+      code:
+        '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    },
+    weight: {
+      regular: '400',
+      bold: '700',
+      extrabold: '800',
+    },
+    size: {
+      s1: '12',
+      s2: '14',
+      s3: '16',
+      m1: '20',
+      m2: '24',
+      m3: '28',
+      l1: '32',
+      l2: '40',
+      l3: '48',
+      code: '90',
+    },
+  },
 };
 
 export default theme;

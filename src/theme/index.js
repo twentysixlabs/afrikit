@@ -4,6 +4,7 @@ import ThemeHelperClasses from './theme-helper-classes';
 import themeColors from './theme-colors';
 import themeTransitions from './theme-transitions';
 import theme from './theme';
+import themeVars, { THEME_CONF } from './theme-vars-cache';
 
 import {
   primaryFontSizes,
@@ -74,6 +75,8 @@ export {
   themeColors,
   themeTransitions,
   theme,
+  themeVars,
+  THEME_CONF,
   // Theme Typography
   primaryFontSizes,
   secondaryFontSizes,

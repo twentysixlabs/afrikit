@@ -1,7 +1,7 @@
 // // @flow
 // import React from 'react'
 import expect from 'expect';
-import { create as render } from 'react-test-renderer';
+// import { create as render } from 'react-test-renderer';
 import { is, num, px, arr, neg } from '../../utils';
 // eslint-disable-next-line
 import system from '../space';
