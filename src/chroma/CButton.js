@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { darken, themeVars, ifPrp } from '../index';
 
 const Text = styled.span`
@@ -37,7 +37,7 @@ const ButtonWrapper = styled.button`
   &:active {
     transform: translate3d(0,0,0);
   }
-  ${props => themeVars(props).bp(prop).media.sm`
+  ${props => themeVars(props).bp(props).media.sm`
     ${ifPrp(
       'small',
       `
@@ -67,42 +67,49 @@ const ButtonWrapper = styled.button`
     pointer-events: none;
   }
 
-  ${ifPrp(
-    'disabled',
-    `
+  ${props =>
+    props.disabled &&
+    css`
       cursor: not-allowed !important;
-      opacity: .5;
+      opacity: 0.5;
       &:hover {
         transform: none;
       }
-    `,
-  )}
+    `}
 
-  ${ifPrp(
-    'primary',
-    `
-      background: ${props => themeVars(props).cpColor.primary};
-      box-shadow: ${props => themeVars(props).cpColor.lightest};
-      svg path { fill: ${props => themeVars(props).cpColor.lightest}; }
-      &:hover { background: ${p => darken(0.05, themeVars(p).cpColor.primary)};}
-      &:active { box-shadow: rgba(0,0,0,.1) 0 0 0 3em inset; }
-      ${ifPrp(
-        'active',
-        `
+  ${props =>
+    props.primary &&
+    css`
+      background: ${themeVars(props).cpColor.primary};
+      box-shadow: ${themeVars(props).cpColor.lightest};
+      svg path {
+        fill: ${themeVars(props).cpColor.lightest};
+      }
+      &:hover {
+        background: ${darken(0.05, themeVars(props).cpColor.primary)};
+      }
+      &:active {
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
+      }
+
+      ${props.primary &&
+        css`
           background: transparent;
-          box-shadow: ${p => themeVars(p).cpColor.primary} 0 0 0 1px inset;
-          color: ${p => themeVars(p).cpColor.primary};
-          svg path { fill: ${p => themeVars(p).cpColor.primary}; }
-
-          &:hover { background: transparent;}
-          &:active {
-            box-shadow: ${p => themeVars(p).cpColor.primary} 0 0 0 3em inset;
-            color: ${p => themeVars(p).cpColor.lightest};
+          box-shadow: ${themeVars(props).cpColor.primary} 0 0 0 1px inset;
+          color: ${themeVars(props).cpColor.primary};
+          svg path {
+            fill: ${themeVars(props).cpColor.primary};
           }
-        `,
-      )}
-    `,
-  )}
+
+          &:hover {
+            background: transparent;
+          }
+          &:active {
+            box-shadow: ${themeVars(props).cpColor.primary} 0 0 0 3em inset;
+            color: ${themeVars(props).cpColor.lightest};
+          }
+        `};
+    `}
 
   ${props =>
     props.secondary &&

@@ -1,28 +1,6 @@
 // @flow
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders,
-  alignItems,
-  alignContent,
-  justifyContent,
-  flexWrap,
-  flexBasis,
-  flexDirection,
-  flex,
-  justifySelf,
-  alignSelf,
-} from '../../../theme';
 
 import config, { DIMENSION_NAMES } from './gridConfig';
 
@@ -96,52 +74,11 @@ const Col = styled.div`
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   `}
-
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
-  ${alignItems};
-  ${alignContent};
-  ${justifyContent};
-  ${flexWrap};
-  ${flexBasis};
-  ${flexDirection};
-  ${flex};
-  ${justifySelf};
-  ${alignSelf};
 `;
 
 Col.displayName = 'Col';
 
 Col.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
-  ...fontWeight.propTypes,
-  ...textAlign.propTypes,
-  ...lineHeight.propTypes,
-  ...display.propTypes,
-  ...borderRadius.propTypes,
-  ...borderColor.propTypes,
-  ...borders.propTypes,
-  ...alignItems.propTypes,
-  ...alignContent.propTypes,
-  ...justifyContent.propTypes,
-  ...flexWrap.propTypes,
-  ...flexBasis.propTypes,
-  ...flexDirection.propTypes,
-  ...flex.propTypes,
-  ...justifySelf.propTypes,
-  ...alignSelf.propTypes,
   ...DimensionPropTypes,
   reverse: PropTypes.bool,
   children: PropTypes.node,

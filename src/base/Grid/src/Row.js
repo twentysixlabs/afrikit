@@ -1,28 +1,6 @@
 // @flow
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  space,
-  color,
-  width,
-  fontSize,
-  fontWeight,
-  textAlign,
-  lineHeight,
-  display,
-  borderRadius,
-  borderColor,
-  borders,
-  alignItems,
-  alignContent,
-  justifyContent,
-  flexWrap,
-  flexBasis,
-  flexDirection,
-  flex,
-  justifySelf,
-  alignSelf,
-} from '../../../theme';
 
 import config, { DIMENSION_NAMES } from './gridConfig';
 
@@ -37,26 +15,6 @@ const Row = styled.div`
   list-style: none;
   margin-right: ${p => (config(p).gutterWidth / 2) * -1}rem;
   margin-left: ${p => (config(p).gutterWidth / 2) * -1}rem;
-  ${space};
-  ${width};
-  ${color};
-  ${fontSize};
-  ${fontWeight};
-  ${textAlign};
-  ${lineHeight};
-  ${display};
-  ${borderRadius};
-  ${borderColor};
-  ${borders};
-  ${alignItems};
-  ${alignContent};
-  ${justifyContent};
-  ${flexWrap};
-  ${flexBasis};
-  ${flexDirection};
-  ${flex};
-  ${justifySelf};
-  ${alignSelf};
   ${p =>
     p.reverse &&
     `
@@ -124,26 +82,6 @@ const Row = styled.div`
 Row.displayName = 'Row';
 
 Row.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
-  ...fontWeight.propTypes,
-  ...textAlign.propTypes,
-  ...lineHeight.propTypes,
-  ...display.propTypes,
-  ...borderRadius.propTypes,
-  ...borderColor.propTypes,
-  ...borders.propTypes,
-  ...alignItems.propTypes,
-  ...alignContent.propTypes,
-  ...justifyContent.propTypes,
-  ...flexWrap.propTypes,
-  ...flexBasis.propTypes,
-  ...flexDirection.propTypes,
-  ...flex.propTypes,
-  ...justifySelf.propTypes,
-  ...alignSelf.propTypes,
   reverse: PropTypes.bool,
   start: ModificatorType,
   center: ModificatorType,

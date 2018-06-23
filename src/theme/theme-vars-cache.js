@@ -33,3 +33,38 @@ export default function themeVars(props) {
 
   return conf;
 }
+
+const themeConfigCache = [];
+const themeMakeCacheId = themeFromProvider =>
+  JSON.stringify(themeFromProvider || {});
+const themeResolveConfig = themeFromProvider => {
+  const themeConf = themeFromProvider || {};
+
+  const conf = {
+    ...THEME_CONF,
+    ...themeConf,
+    bp,
+  };
+
+  return conf;
+};
+export const extractThemeOrDefault = themeFromProvider => {
+  // if (!themeFromProvider) return THEME_CONF;
+  // return { ...THEME_CONF, ...themeFromProvider };
+
+  let cacheId;
+  if (themeConfigCache.length === 0) {
+    cacheId = themeMakeCacheId(themeFromProvider);
+  }
+
+  if (themeConfigCache[0] === cacheId) {
+    return themeConfigCache[1];
+  }
+
+  const conf = themeResolveConfig(themeFromProvider);
+
+  themeConfigCache[0] = cacheId;
+  themeConfigCache[1] = conf;
+
+  return conf;
+};

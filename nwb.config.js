@@ -13,6 +13,9 @@ module.exports = {
   },
   babel: {
     runtime: true,
-    plugins: [['styled-components', { ssr: process.env.PRODUCTION || false }]],
+    plugins: [
+      ['styled-components', { ssr: process.env.PRODUCTION || false }],
+      ['emotion', { hoist: true }],
+    ],
   },
 };

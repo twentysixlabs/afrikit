@@ -1,10 +1,13 @@
 // @flow
 import ThemeReset from './theme-reset';
 import ThemeHelperClasses from './theme-helper-classes';
-import themeColors from './theme-colors';
+// import themeColors from './theme-colors';
 import themeTransitions from './theme-transitions';
 import theme from './theme';
-import themeVars, { THEME_CONF } from './theme-vars-cache';
+import themeVars, {
+  THEME_CONF,
+  // extractThemeOrDefault,
+} from './theme-vars-cache';
 
 import {
   primaryFontSizes,
@@ -67,16 +70,15 @@ import {
   addZoomMotion,
 } from './theme-animations';
 
-import sys from './theme-props-system';
-
 export {
   ThemeReset,
   ThemeHelperClasses,
-  themeColors,
+  // themeColors,
   themeTransitions,
   theme,
   themeVars,
   THEME_CONF,
+  // extractThemeOrDefault,
   // Theme Typography
   primaryFontSizes,
   secondaryFontSizes,
@@ -133,6 +135,14 @@ export {
   addZoomMotion,
 };
 
-export * from './space';
-
-export { sys };
+export * from './extras/theme-base';
+export * from './extras/mixins';
+export * from './extras/style-functions';
+export * from './extras/style-helpers';
+export * from './extras/utils';
+export * from './extras/theme-constants';
+export * from './extras/mixin-provider';
+// export * from './reactackle/globalStyles';
+// export * from './reactackle/resetStyles';
+export * from './extras/hoc/MixinProvider';
+export * from './extras/hoc/withTheme';

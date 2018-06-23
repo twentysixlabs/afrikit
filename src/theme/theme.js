@@ -17,7 +17,7 @@ import {
   shrinkAndFadeOut,
 } from './theme-keyframes';
 
-// import transitions from './theme-transitions';
+import transitions from './theme-transitions';
 import colors from './theme-colors';
 
 import rem from '../utils/helpers/rem';
@@ -26,19 +26,60 @@ import rgba from '../utils/color/rgba';
 import hsv from '../utils/color/hsv';
 
 import {
-  primaryFontSizes,
-  secondaryFontSizes,
+  grid,
+  basicColors,
+  themeColors,
+  greyPalette,
+  fontSize as rfontSize,
+  fontFamily,
+  fontWeight,
+  body,
+  colorsFgCalculated,
+} from './reactackle/theme-constants';
+
+import {
   fontFallBackStack,
   primaryFontStack,
-  secondaryFontStack,
   monoFontStack,
-  primaryFontObj,
-  secondaryFontObj,
-  pfont,
-  sfont,
+  borderRadius,
+  fontSize,
+  gridSize,
+  primaryFontFamily,
+  secondaryFontFamily,
+  codeFontFamily,
+  layers,
+  baseHeading,
+  h900,
+  h800,
+  h700,
+  h600,
+  h500,
+  h400,
+  h300,
+  h200,
+  h100,
 } from './theme-typography';
 
 const theme = {
+  mode: 'light',
+  colors,
+  borderRadius,
+  fontSize,
+  gridSize,
+  primaryFontFamily,
+  secondaryFontFamily,
+  codeFontFamily,
+  layers,
+  baseHeading,
+  h900,
+  h800,
+  h700,
+  h600,
+  h500,
+  h400,
+  h300,
+  h200,
+  h100,
   // -------- Colors -----------
   primaryColor: colors.blue6,
   infoColor: colors.blue6,
@@ -92,17 +133,6 @@ const theme = {
   fontSizeSm: rem(12),
   lineHeightBase: 1.5,
 
-  // Typographic Sizes and Family
-  primaryFontSizes,
-  secondaryFontSizes,
-  fontFallBackStack,
-  primaryFontStack,
-  secondaryFontStack,
-  primaryFontObj,
-  secondaryFontObj,
-  pfont,
-  sfont,
-
   // vertical paddings
   paddingLg: rem(24), // containers
   paddingMd: rem(16), // small containers and buttons
@@ -140,6 +170,7 @@ const theme = {
 
   // Transitions
   // ...transitions,
+  transitions,
 
   // Border
   borderRadiusBase: '4px',
@@ -599,6 +630,106 @@ const theme = {
       l3: '48',
       code: '90',
     },
+  },
+
+  // Reactackle
+
+  baseModule: 8,
+  contentWidth: 1360,
+  totalColumns: grid.totalColumns,
+
+  radiusDefault: 2,
+  radiusRounded: 1000,
+
+  /**
+   * breakpoints contain lower bounds of screen sizes
+   * ex. if you want some div to be 100% width for small screen (<60em) and
+   * take 50% width on medium up screens
+   * @example const boxStyled = styled.div css`
+   *  width: 100%;
+   *  ${media(medium)`width: 50%;`}
+   * `
+   */
+  rbreakpoints: {
+    xsmall: '0',
+    small: '30em',
+    medium: '60em',
+    large: '80em',
+    xlarge: '90em',
+    xxlarge: '120em',
+  },
+
+  breakpointsEmBase: 16,
+
+  color: {
+    white: basicColors.white,
+    black: basicColors.black,
+    transparent: basicColors.transparent,
+
+    main: themeColors.main,
+    mainFgTextColor: colorsFgCalculated.main,
+    secondary: themeColors.secondary,
+    secondaryFgTextColor: colorsFgCalculated.secondary,
+
+    alert: themeColors.alert,
+    alertFgTextColor: colorsFgCalculated.alert,
+    warning: themeColors.warning,
+    warningFgTextColor: colorsFgCalculated.warning,
+    error: themeColors.alert,
+    errorFgTextColor: colorsFgCalculated.alert,
+    success: themeColors.success,
+    successFgTextColor: colorsFgCalculated.success,
+    info: themeColors.info,
+    infoFgTextColor: colorsFgCalculated.info,
+  },
+
+  colorPaletteGrey: { ...greyPalette },
+
+  colorBorder: greyPalette[300],
+  colorAnchor: basicColors.darkblue,
+
+  colorBrand: {
+    facebook: '#3b5998',
+    vkontakte: '#45668e',
+    googlePlus: '#dd4b39',
+  },
+
+  rfontFamily: { ...fontFamily },
+
+  fontWeight: { ...fontWeight },
+
+  rfontSize: { ...rfontSize },
+
+  fontColor: {
+    light: greyPalette[300],
+    medium: greyPalette[500],
+  },
+
+  direction: {
+    text: 'ltr',
+    float: 'left',
+  },
+
+  zIndex: {
+    moon: 9999,
+    tooltip: 9990,
+    alertDesktop: 9000,
+    popup: 8700,
+    modal: 8500,
+    overlay: 8000,
+    dropdown: 7000,
+    alertMobile: 5000,
+    nav: 500,
+    base: 1,
+  },
+
+  body: {
+    backgroundColor: body.backgroundColor,
+    fontColor: body.fontColor,
+    fontColorAlt: body.fontColorAlt,
+    fontFamily: 'sansSerif', // place here a key of fontFamily collection
+    fontWeight: fontWeight.normal,
+    lineHeight: 1.5,
   },
 };
 

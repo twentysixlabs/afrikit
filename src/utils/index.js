@@ -104,8 +104,8 @@ import transparentize from './color/transparentize';
 import toHexColor from './color/to-hex-color';
 
 import cleanElement from './html/cleanElement';
-import cleanTag from './html/cleanTag';
-import htmlTag from './html/htmlTag';
+import CleanTag from './html/cleanTag';
+import { htmlTag } from './html/htmlTag';
 import { htmlTags, voidHtmlTags } from './html/htmlTags';
 import kindOf from './html/kindOf';
 import {
@@ -218,7 +218,7 @@ export {
   toHexColor,
   // html
   cleanElement,
-  cleanTag,
+  CleanTag,
   htmlTag,
   htmlTags,
   voidHtmlTags,

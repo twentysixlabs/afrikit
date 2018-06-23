@@ -1,134 +1,9 @@
 // @flow
 import { css } from 'styled-components';
 import rem from '../utils/helpers/rem';
+import colors from './theme-colors';
 
-export const primaryFontSizes = {
-  s11: {
-    size: rem(11),
-    height: '1.1em',
-  },
-  s14: {
-    size: rem(14),
-    height: rem(18),
-  },
-  s15: {
-    size: rem(15),
-    height: '1.25em',
-  },
-  s16: {
-    size: rem(16),
-    height: '1.4em',
-  },
-  s17: {
-    size: rem(17),
-    height: '1.1em',
-  },
-  s18: {
-    size: rem(18),
-    height: '1.4em',
-  },
-  s19: {
-    size: rem(19),
-    height: '1.5em',
-  },
-  s23: {
-    size: rem(23),
-    height: '1.5em',
-  },
-  s28: {
-    size: rem(28),
-    height: '1.2em',
-  },
-  s30: {
-    size: rem(30),
-    height: '1.25em',
-  },
-  s34: {
-    size: rem(34),
-    height: '1.1em',
-  },
-  s37: {
-    size: rem(37),
-    height: '1.2em',
-  },
-  s40: {
-    size: rem(40),
-    height: '1.1em',
-  },
-  s50: {
-    size: rem(50),
-    height: '1.1em',
-  },
-};
-
-export const secondaryFontSizes = {
-  s10: {
-    size: rem(10),
-    height: '1.4em',
-  },
-  s12: {
-    size: rem(12),
-    height: '1.4em',
-  },
-  s14: {
-    size: rem(14),
-    height: '1.4em',
-  },
-  s16: {
-    size: rem(16),
-    height: '1.1em',
-  },
-  s18: {
-    size: rem(18),
-    height: '1.1em',
-  },
-  s19: {
-    size: rem(19),
-    height: '1.5em',
-  },
-  s25: {
-    size: rem(25),
-    height: '1.1em',
-  },
-  s32: {
-    size: rem(32),
-    height: '1.1em',
-  },
-  s34: {
-    size: rem(34),
-    height: '1.1em',
-  },
-  s40: {
-    size: rem(40),
-    height: '1.1em',
-  },
-  s45: {
-    size: rem(45),
-    height: '1.2em',
-  },
-  s65: {
-    size: rem(65),
-    height: '1em',
-  },
-  s67: {
-    size: rem(67),
-    height: '1em',
-  },
-  s80: {
-    size: rem(80),
-    height: '1.1em',
-  },
-  s100: {
-    size: rem(100),
-    height: '1.1em',
-  },
-  s120: {
-    size: rem(120),
-    height: '1.1em',
-  },
-};
-
-export const fontFallBackStack = `'-apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', "Helvetica Neue", 'Helvetica', 'sans-serif'`;
+export const fontFallBackStack = `'-apple-system', 'BlinkMacSystemFont', "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`;
 
 export const primaryFontStack = `'Lato' ${fontFallBackStack}`;
 
@@ -138,46 +13,93 @@ export const monoFontStack = `
   "SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", 'Input Mono', 'Menlo',
   'Inconsolata', 'Roboto Mono', Consolas, Menlo, Courier, monospace
 `;
+/*
+  These theme values are expressed as functions so that if we decide to make
+  them dependent on props in the future, it wouldn't require a significant
+  refactor everywhere they are being used.
+*/
+export const borderRadius = () => 3;
+export const gridSize = () => 8;
+export const fontSize = () => rem(14);
+export const primaryFontFamily = () => primaryFontStack;
+export const secondaryFontFamily = () => secondaryFontStack;
+export const codeFontFamily = () => monoFontStack;
 
-export const primaryFontObj = {
-  fontFamily: primaryFontStack,
-  style: css`
-    font-family: ${primaryFontStack};
-    -webkit-font-smoothing: antialiased;
-    letter-spacing: ${rem(12)};
-  `,
+export const layers = {
+  card: () => 100,
+  dialog: () => 200,
+  navigation: () => 300,
+  layer: () => 400,
+  blanket: () => 500,
+  modal: () => 510,
+  flag: () => 600,
+  spotlight: () => 700,
+  tooltip: () => 800,
 };
 
-export const secondaryFontObj = {
-  fontFamily: secondaryFontStack,
-  style: css`
-    font-family: ${secondaryFontStack};
-    -webkit-font-smoothing: antialiased;
-  `,
-};
+export const baseHeading = (size, lineHeight) => `
+  font-size: ${rem(size)};
+  font-style: inherit;
+  line-height: ${lineHeight / size};
+`;
 
-type PFontSizes = $Keys<typeof primaryFontSizes>;
+export const h900 = () => css`
+  ${baseHeading(35, 40)} color: ${colors.heading};
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: ${gridSize() * 6.5}px;
+`;
 
-export const pfont = (size: PFontSizes, isBold?: boolean = true) => {
-  const evaluatedSize = primaryFontSizes[size];
-  return css`
-    font-family: ${primaryFontFamily};
-    -webkit-font-smoothing: antialiased;
-    font-size: ${evaluatedSize.size};
-    line-height: ${evaluatedSize.height};
-    font-weight: ${isBold ? `700` : `400`};
-  `;
-};
+export const h800 = () => css`
+  ${baseHeading(29, 32)} color: ${colors.heading};
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: ${gridSize() * 5}px;
+`;
 
-type SFontSizes = $Keys<typeof secondaryFontSizes>;
+export const h700 = () => css`
+  ${baseHeading(24, 28)} color: ${colors.heading};
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: ${gridSize() * 5}px;
+`;
 
-export const sfont = (size: SFontSizes) => {
-  const evaluatedSize = secondaryFontSizes[size];
-  return css`
-    font-family: ${primaryFontStack};
-    -webkit-font-smoothing: antialiased;
-    font-size: ${evaluatedSize.size};
-    line-height: ${evaluatedSize.height};
-    font-weight: normal;
-  `;
-};
+export const h600 = () => css`
+  ${baseHeading(20, 24)} color: ${colors.heading};
+  font-weight: 500;
+  letter-spacing: -0.008em;
+  margin-top: ${gridSize() * 3.5}px;
+`;
+
+export const h500 = () => css`
+  ${baseHeading(16, 20)} color: ${colors.heading};
+  font-weight: 600;
+  letter-spacing: -0.006em;
+  margin-top: ${gridSize() * 3}px;
+`;
+
+export const h400 = () => css`
+  ${baseHeading(14, 16)} color: ${colors.heading};
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  margin-top: ${gridSize() * 2}px;
+`;
+
+export const h300 = () => css`
+  ${baseHeading(12, 16)} color: ${colors.subtleHeading};
+  font-weight: 600;
+  margin-top: ${gridSize() * 2.5}px;
+  text-transform: uppercase;
+`;
+
+export const h200 = () => css`
+  ${baseHeading(12, 16)} color: ${colors.subtleHeading};
+  font-weight: 600;
+  margin-top: ${gridSize() * 2}px;
+`;
+
+export const h100 = () => css`
+  ${baseHeading(12, 16)} color: ${colors.subtleHeading};
+  font-weight: normal;
+  margin-top: ${gridSize() * 2}px;
+`;
